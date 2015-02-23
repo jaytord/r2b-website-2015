@@ -1,0 +1,107 @@
+/**
+ * Home Page Styles
+ */
+
+  div#home-page{
+ 	div.cfm-project-gallery{
+ 		padding:40px 0 0 0;
+ 		margin:1px -1px 0 0;
+
+		ul{
+	 		li{
+	 			width:100%;
+
+				div.project-inner{
+		 			a{
+		 				background-color:#111;
+		 				padding-bottom: 15%;
+		 				border-right:1px solid #FFF;
+ 						border-bottom:1px solid #FFF;
+
+		 				div.project-label{
+		 					opacity: 1;
+		 					background-color:transparent;
+
+		 					div.project-label-inner{
+		 						background-color:transparent;
+		 						border:none;
+		 						transform: scale(1.2);
+
+		 						h3{
+		 							font-size: 16px;
+		 							color:$white;
+		 						}
+		 					}
+		 				}
+
+		 				&:hover{
+		 					div.project-label{
+		 						background-color:#fff;
+
+			 					div.project-label-inner{
+			 						h3{color:#444;}
+			 					}
+			 				}
+		 				}
+	 				}	
+	 			}
+
+	 			@media( min-width:$tablet-small){ 
+	 				width:33.3334%; 
+
+	 				div.project-inner{
+	 					a{
+	 						padding-bottom: 90%;
+	 					}
+	 				}
+
+	 				&:nth-child(-n+2){
+	 					width: 50%;
+
+	 					div.project-inner{
+				 			a{
+				 				padding-bottom: 60%;
+			 				}	
+			 			}
+			 		}
+	 			}
+
+	 			@media( min-width:$tablet-large){ 
+	 				width:20%; 
+
+	 				div.project-inner{
+	 					a{
+	 						padding-bottom: 100%;
+	 					}
+	 				}
+
+ 					&:nth-child(-n+2){
+	 					width: 20%;
+
+	 					div.project-inner{
+				 			a{
+				 				padding-bottom: 100%;
+			 				}	
+			 			}
+			 		}
+			 	}
+
+			 	@media( min-width:$desktop-large){ 
+	 				div.project-inner{
+	 					a{
+	 						padding-bottom: 80%;
+	 					}
+	 				}
+
+	 				&:nth-child(-n+2){
+	 					div.project-inner{
+				 			a{
+				 				padding-bottom: 80%;
+			 				}	
+			 			}
+			 		}
+			 	}
+	 		}
+	 	}
+	 }
+}

@@ -1,0 +1,38 @@
+/**
+ * Clients Page Styles
+ */
+
+ div#clients-page{
+ 	div.cfm-project-gallery{
+ 		margin:0 -1px 0 0;
+
+		ul{
+	 		li{
+	 			width:50%;
+
+	 			@media( min-width:$tablet-small){ width:33.33334%; }
+	 			@media( min-width:$tablet-large){ width:20%; }
+	 			@media( min-width:$desktop){ width:16.66667%; }
+	 			@media( min-width:$desktop-large){ width:14.28571428571429%; }
+
+	 			div.project-inner{
+	 				border-right:1px solid #FFF;
+ 					border-bottom:1px solid #FFF;
+
+		 			a{
+		 				background-color: #000;
+
+		 				&:link,&:visited{
+		 				}
+
+		 				div.project-label{
+		 					div.project-label-inner{
+		 						padding:8px;
+			 				}
+		 				}
+		 			}
+	 			}
+	 		}
+	 	}
+	 }
+}

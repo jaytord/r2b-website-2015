@@ -1,0 +1,66 @@
+/* ============================
+    CFM Project Gallery Styles
+===============================*/
+
+div.cfm-project-gallery{
+	padding:0 0 0 0;
+	margin:0 0 0 0;
+
+	ul{
+ 		list-style: none;
+ 		padding:0; margin:0;
+ 		
+ 		@include clearfix();
+
+ 		li{
+ 			float:left;
+ 			width:100%;
+
+ 			@media( min-width:$tablet-small){ width:50%; }
+ 			@media( min-width:$tablet-large){ width:33.33334%; }
+ 			@media( min-width:$desktop-large){ width:25%; }
+
+ 			div.project-inner{
+ 				padding:0;
+ 				margin:0;
+
+	 			a{
+	 				display: block;
+	 				padding-bottom:100%;
+	 				background-color: #EEE;
+	 				background-repeat:no-repeat;
+	 				background-size:cover;
+	 				position: relative;
+	 				height:0;
+
+	 				&:link,&:visited{
+	 					color: #999;
+	 					text-decoration: none;
+	 				}
+
+	 				div.project-label{
+	 					position: absolute;
+	 					height: 100%; width: 100%;
+	 					text-align: center;
+
+	 					&:before{
+						 	content: "";
+						 	display: inline-block;
+						 	height: 100%;
+						 	vertical-align: middle;
+						 	margin: 0 0 0 0;
+	 					}
+
+	 					div.project-label-inner{
+	 						border-radius: 4px;
+	 						background-color:#FFF;
+	 						padding:20px;
+		 					display: inline-block;
+						  	vertical-align: middle;
+		 				}
+	 				}
+	 			}
+ 			}
+ 		}
+ 	}
+ }

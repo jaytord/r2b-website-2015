@@ -1,0 +1,54 @@
+/**
+ * About Page Styles
+ */
+
+ div#about-page{
+ 	div.cfm-project-gallery.what-we-do{
+		padding:8	0px 20px;
+
+		@media( min-width:$tablet-small){
+			padding:80px 80px;
+		}
+
+		@media( min-width:$tablet-large){
+			padding:80px 80px;
+		}
+
+		@media( min-width:$desktop){
+			padding:80px 140px;
+		}
+
+		@media( min-width:$desktop-large){
+			padding:120px 180px;
+		}
+
+ 		ul{
+		    @media( min-width:$tablet-large){
+		    	@include prefix("column-count", 2);
+		    	@include prefix("column-gap", 20px);
+			}
+
+ 			li{
+ 				@include prefix("column-break-inside", "avoid");
+
+ 				width:100%;
+ 				height: auto;
+
+ 				div.project-inner{
+		 			padding-bottom:20px;
+
+ 					a{
+ 						padding-bottom:0;
+ 						height: auto;
+ 						background-color: transparent;
+
+			 			h3{
+			 				font-size: 28px;
+			 				line-height: 30px;
+			 			}
+					}
+		 		}
+ 			}
+ 		}
+ 	}
+ }
