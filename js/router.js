@@ -63,12 +63,10 @@ define([
       $(window).scrollTop(0);
 
       if(!firstpage){
-        $("#page-container").delay(100).animate({opacity:0}, 400, "swing", function(){
-          _t.page_collection.activatePageById( _pageid );
-        });
-      } else {
-        _t.page_collection.activatePageById( _pageid );
+        $("#page-container").css({opacity:0});
       }
+      
+      _t.page_collection.activatePageById( _pageid );
       
       if( firstpage ) firstpage = false;
     }

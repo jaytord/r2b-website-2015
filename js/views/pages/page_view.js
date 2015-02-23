@@ -48,7 +48,7 @@ define([
 
 			this.onready();
 			
-			$("#page-container").delay(0).animate({opacity:1},400);
+			$("#page-container").delay(300).animate({opacity:1},400);
 		},
 		buildsliders:function(){
 			console.log("PageView: ", this.id, " :buildsliders");
