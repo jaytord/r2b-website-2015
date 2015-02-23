@@ -16,7 +16,7 @@
 */
 
 $config['base_url']	= '';
-$config['root_directory'] = 'boilerplate/';
+$config['root_directory'] = 'r2b/';
 $config['ga_account'] = 'XXXXXXXX';
 $config['debug'] = true;
 
