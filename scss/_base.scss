@@ -154,7 +154,7 @@ div.cfm-project-gallery{
  				a{
  					div.project-label{
  						background-color:#FFF;
- 						// opacity: 0;
+ 						opacity: 0;
  						transform: scale(.95);
 
  						@include prefix( "transition", .25s ease-in-out );
