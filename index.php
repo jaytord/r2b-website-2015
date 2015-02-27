@@ -23,6 +23,7 @@
 
 	switch ($host) {
 		case 'r2b.dev':
+		case '10.0.1.44':
 		case '192.168.1.5':
 			define('ENVIRONMENT', 'local');
 			break;

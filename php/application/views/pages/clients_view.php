@@ -1,6 +1,3 @@
-<?php
-?>
-
 <div id="clients-page" class="page-content-inner">
 	<div class="page-header"><div class="page-header-inner">
 		<h2>CLIENTS</h2>
@@ -8,17 +5,15 @@
 	</div></div>
 
 	<div class="cfm-project-gallery">
-		<ul>
+		<ul><!--
 			<?php foreach ($data as $key => $client): ?>
-			<li data-id="<?= $client->id; ?>" data-image="<?= base_url().'img/clients/'.$client->image.'.jpg'; ?>">
+			--><li data-id="<?= $client->id; ?>" data-image="<?= base_url().'img/clients/'.$client->thumbnail_image.'.jpg'; ?>">
 				<div class="project-inner">
-					<a class="cfm-project" href="<?= base_url(); ?>project/p1" data-navigate-to="project/p1">
-						<div class="project-label"><div class="project-label-inner"><?= $client->title; ?></div></div>
-					</a>
+					<a class="cfm-project"></a>
 				</div>
-			</li>
+			</li><!--
 			<?php endforeach; ?>
-		</ul>
+		--></ul>
 	</div>
 </div>
 

@@ -2,6 +2,8 @@
  * Work Page Styles
  */
 
- div#projects-page{
-	
+ div#projects-page, div#casestudies-page{
+	.cfm-project-gallery{
+		background:rgba(250,250,250,1);
+	}
 }

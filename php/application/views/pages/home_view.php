@@ -1,7 +1,7 @@
 <div id="home-page" class="page-content-inner">
-		<div class="page-header"><div class="page-header-inner">
-	  <h2>WE CREATE COMPELLING CONTENT INFORMED BY STRATEGIC INSIGHTS, POWERED BY TECHNOLOGY.</h2>
-	  <p>Raison D'Être is a full service agency. We create remarkable experiences through innovation in storytelling, technology, entertainment and social media.</p>
+	<div class="page-header"><div class="page-header-inner">
+	  <h1>STRATEGIC INSIGHTS POWERED BY&nbsp;TECHNOLOGY.</h1>
+	  <p>We create remarkable experiences through innovation in storytelling, technology, entertainment&nbsp;and&nbsp;social&nbsp;media.</p>
 	</div></div>
 
 	<div id="reel-video" class="cfm-videoplayer" data-video-name="reel" data-poster="<?= base_url(); ?>img/posters/reel_poster.jpg">

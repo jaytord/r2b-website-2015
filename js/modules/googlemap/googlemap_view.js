@@ -12,6 +12,7 @@ define([
 	            streetViewControl: false,
 	            panControl: false,
 				zoomControl: false,
+				draggable:false,
 				mapTypeControl: false,
 				scaleControl: false,
 				streetViewControl: false,

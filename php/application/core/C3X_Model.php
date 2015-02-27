@@ -15,6 +15,10 @@ class C3X_Model extends CI_Model
 	function fields(){
 		return $this->fields;
 	}
+
+	function clear(){
+		$this->db->truncate( $this->table );
+	}
 	
 	function pk(){
 		return $this->pk;
@@ -75,6 +79,26 @@ class C3X_Model extends CI_Model
 		$this->db->update($this->table);
 		
 		return $this->db->affected_rows();
+	}
+
+	function nextrecord($pid){
+		$this->db->where( $this->pk." >", $pid );
+		$query = $this->db->get( $this->table, 1 );
+		$result = $query->result();
+
+		if( count($result) != 0 ) $result = $result[0];
+
+		return $result;
+	}
+
+	function previousrecord($pid){
+		$this->db->where( $this->pk." <", $pid );
+		$query = $this->db->get( $this->table, 1);
+		$result = $query->result();
+
+		if( count($result) != 0 ) $result = $result[0];
+
+		return $result;
 	}
 	
 	function delete($pId)

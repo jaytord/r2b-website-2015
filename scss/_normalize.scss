@@ -533,23 +533,27 @@ textarea {
     color: #222;
 }
 
-html,body{
-    padding:0;
-    margin:0;
-    width:100%;
-    overflow: hidden;
+html{
+    font-size: 1em;
+    line-height: 1.4;
+    padding:0;  margin:0;
+    overflow: auto;
     overflow-x:hidden;
 }
 
-html {
-    font-size: 1em;
-    line-height: 1.4;
-    overflow: auto;
+body{
+    width: 100%;
+    padding:0; margin:0;
+    overflow: hidden;
 }
 
 ::-moz-selection {
     background: #b3d4fc;
     text-shadow: none;
+}
+
+::-webkit-scrollbar {
+    display:none;
 }
 
 ::selection {

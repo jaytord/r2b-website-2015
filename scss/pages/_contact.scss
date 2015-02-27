@@ -10,10 +10,9 @@ div#contact-page{
 			width: 100%;
 			padding-bottom: 100%;
 
-			@media(min-width:$tablet-small){ padding-bottom:70% }
-			@media(min-width:$tablet-large){ padding-bottom:60% }
-			@media(min-width:$desktop){ padding-bottom:50% }
-			@media(min-width:$desktop-large){ padding-bottom:40% }
+			@media(min-width:$tablet-small){ padding-bottom:80% }
+			@media(min-width:$desktop){ padding-bottom:60% }
+			@media(min-width:$desktop-large){ padding-bottom:50% }
 		}
 	}
 }

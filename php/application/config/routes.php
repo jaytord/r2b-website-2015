@@ -38,19 +38,21 @@
 |
 */
 
-$route['default_controller'] = "main";
-$route['404_override'] = '';
+$route['default_controller'] 		= "main";
+$route['404_override'] 				= '';
 
 /* js template routes */
-$route['template/(:any).php'] = 'main/template/$1';
+$route['template/(:any)/(:any)'] 	= 'main/pagedetailtemplate/$1/$2';
+$route['template/(:any).php'] 		= 'main/pagetemplate/$1';
 
 /* api routes */
-$route['api/fetchimages/(:any)'] = 'api/fetchimages/$1';
-
-$route['api/(:any)'] = 'api/index/$1';
+$route['api/fetchimages/(:any)'] 	= 'api/fetchimages/$1';
+$route['api/parsedetails/(:any)'] 			= 'api/parsedetails/$1';
+$route['api/(:any)'] 				= 'api/index/$1';
 
 /* page routes */
-$route['(:any)'] = 'main/index/$1';
+$route['(:any)/(:any)'] 			= 'main/pagedetail/$1/$2';
+$route['(:any)'] 					= 'main/index/$1';
 
 
 

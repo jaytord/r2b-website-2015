@@ -3,11 +3,30 @@
  */
 
  div#about-page{
+
+ 	.cfm-videoplayer-playbutton{
+		@media( min-width:$tablet-small){
+			left:40px;
+		}
+
+		@media( min-width:$tablet-large){
+			left:80px;
+		}
+
+		@media( min-width:$desktop){
+			left:140px;
+		}
+
+		@media( min-width:$desktop-large){
+			left:180px;
+		}
+	}
+
  	div.cfm-project-gallery.what-we-do{
 		padding:60px 20px;
 
 		@media( min-width:$tablet-small){
-			padding:80px 80px;
+			padding:80px 40px;
 		}
 
 		@media( min-width:$tablet-large){
@@ -29,22 +48,27 @@
 			}
 
  			li{
- 				@include prefix("column-break-inside", "avoid");
+ 				-webkit-column-break-inside: avoid;
+         		page-break-inside: avoid;
+               	break-inside: avoid;	
 
  				width:100%;
  				height: auto;
+ 				vertical-align: top;
+ 				padding-bottom:20px;
+ 				float: none;
 
  				div.project-inner{
-		 			padding-bottom:20px;
+		 			padding:22px 20px 4px 20px;
+		 			border: 4px solid #eee;
 
  					a{
  						padding-bottom:0;
  						height: auto;
  						background-color: transparent;
 
-			 			h3{
-			 				font-size: 24px;
-			 				line-height: 26px;
+			 			h2{
+			 				font-family: "gotham-book";
 			 			}
 					}
 		 		}

@@ -3,8 +3,36 @@
  */
 
   div#home-page{
+  	.cfm-videoplayer
+	{
+		.cfm-videoplayer-poster{
+			background-position:right center;
+
+			.cfm-videoplayer-playbutton{
+				left:50%;  top:50%;  margin:-55px 0 0 -50px;
+
+				@media( min-width:$tablet-small){
+					top:90px; margin:0;
+					left:60px;
+				}
+
+				@media( min-width:$tablet-large){
+					left:80px;
+				}
+
+				@media( min-width:$desktop){
+					left:140px;
+				}
+
+				@media( min-width:$desktop-large){
+					left:180px;
+				}
+			}
+		}
+	}
+
  	div.cfm-project-gallery{
- 		padding:40px 0 0 0;
+ 		padding:0 0 0 0;
  		margin:1px -1px 0 0;
 
 		ul{
@@ -13,8 +41,9 @@
 
 				div.project-inner{
 		 			a{
+		 				box-sizing:border-box;
 		 				background-color:#111;
-		 				padding-bottom: 15%;
+		 				padding-bottom: 20%;
 		 				border-right:1px solid #FFF;
  						border-bottom:1px solid #FFF;
 
@@ -25,10 +54,8 @@
 		 					div.project-label-inner{
 		 						background-color:transparent;
 		 						border:none;
-		 						transform: scale(1.2);
 
 		 						h3{
-		 							font-size: 16px;
 		 							color:$white;
 		 						}
 		 					}
@@ -51,7 +78,7 @@
 
 	 				div.project-inner{
 	 					a{
-	 						padding-bottom: 90%;
+	 						padding-bottom: 64%;
 	 					}
 	 				}
 
@@ -60,7 +87,7 @@
 
 	 					div.project-inner{
 				 			a{
-				 				padding-bottom: 60%;
+				 				padding-bottom: 40%;
 			 				}	
 			 			}
 			 		}
@@ -81,22 +108,6 @@
 	 					div.project-inner{
 				 			a{
 				 				padding-bottom: 100%;
-			 				}	
-			 			}
-			 		}
-			 	}
-
-			 	@media( min-width:$desktop-large){ 
-	 				div.project-inner{
-	 					a{
-	 						padding-bottom: 80%;
-	 					}
-	 				}
-
-	 				&:nth-child(-n+2){
-	 					div.project-inner{
-				 			a{
-				 				padding-bottom: 80%;
 			 				}	
 			 			}
 			 		}

@@ -2,9 +2,8 @@ define([
   'backbone',
   'models/page_model',
   'modules/slider/views/slider_view',
-  'modules/videoplayer/views/videoplayer_view',
   'modules/project_gallery/project_gallery_view'
-], function(Backbone, PageModel, SliderView, VideoPlayerView, ProjectGalleryView){
+], function(Backbone, PageModel, SliderView, ProjectGalleryView){
 	var PageView = Backbone.View.extend({
 		el: "#page-container",
 		initialize:function( options ){
@@ -37,8 +36,6 @@ define([
 			this.ready();
 		},
 		ready:function(){
-			this.buildsliders();
-			// this.buildvideos();
 			this.buildprojectgalleries();
 
 			this.$el.find("a[data-navigate-to]").click(function(e){
@@ -49,36 +46,8 @@ define([
 			this.onready();
 			
 			$("#page-container").delay(300).animate({opacity:1},400);
+			$("#footer-container").delay(700).fadeIn(400);
 		},
-		buildsliders:function(){
-			console.log("PageView: ", this.id, " :buildsliders");
-
-			var _t = this;
-
-			_t.sliders = [];
-
-			this.$el.find(".cfm-slider" ).each( function( i, _el ){
-				var slider = new SliderView({
-					id:_el.getAttribute( "id" ), 
-					el:_el
-				} );
-
-				_t.sliders.push( slider );				
-			});
-		},
-		// buildvideos:function(){
-		// 	var _t = this;
-
-		// 	_t.videos = [];
-
-		// 	$(".cfm-videoplayer").each( function( i, _el ){
-		// 		var video = new VideoPlayerView( {
-		// 		  id:_el.getAttribute("id"), el:_el, page_collection:_t.page_collection
-		// 		} );
-
-		// 		_t.videos.push( video );
-		// 	});
-		// },
 		buildprojectgalleries:function(){
 			var _t = this;
 

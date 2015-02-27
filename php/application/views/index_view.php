@@ -47,17 +47,19 @@
         <!--[if IE 8 ]><body class="ie8"><![endif]-->
         <!--[if (gt IE 9)|!(IE)]><!--><body><!--<![endif]-->
 
-        <div class="site-wrapper">
+        <div id="site-wrapper" class="site-wrapper">
             <div id="header-container">
-                <div id="logo" class="logo"><a href="<?= base_url(); ?>"></a></div>
-                <div id="hamburger" class="hamburger">
-                    <div class="hamburger-inner">
-                        <a>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </a>
+                <div class="header-inner">
+                    <div id="logo" class="logo"><a href="<?= base_url(); ?>"></a></div>
+                    <div id="hamburger" class="hamburger">
+                        <div class="hamburger-inner">
+                            <a>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>

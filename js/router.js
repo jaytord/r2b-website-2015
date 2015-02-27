@@ -24,7 +24,8 @@ define([
         new CaseStudiesView({ collection:_t.page_collection }),
         new AboutView({ collection:_t.page_collection }),
         new ClientsView({ collection:_t.page_collection }),
-        new ProjectView({ collection:_t.page_collection }),
+        new ProjectView({ collection:_t.page_collection, id:"casestudy"}),
+        new ProjectView({ collection:_t.page_collection, id:"project"}),
         new ContactView({ collection:_t.page_collection })
       ];
 
@@ -35,6 +36,7 @@ define([
 
       /** ===== BUILD NAVIGATIONS ===== **/
       _t.navigations = [];
+
       $(".cfm-navigation").each(function(i, _el){
         var navigation = new NavigationView({
           id:_el.getAttribute("id"), el:_el, page_collection:_t.page_collection
@@ -51,22 +53,23 @@ define([
       Backbone.history.start( {pushState: pushstate ? true : false, hashChange:true, silent:false, root:root_dir} );
     },
     routes: {
-      ':pageid'   : 'onchangepage',
-      '*actions'  : 'onchangepage'
+      ':pageid/:id'           : 'onchangepage',
+      ':pageid'               : 'onchangepage',
+      '*actions'              : 'onchangepage'
     },
-    onchangepage:function(_pageid){
+    onchangepage:function(_pageid, _detailslug){
       var _t = this;
 
       !_pageid ? _pageid = "home" : null;
 
       $(document.documentElement).removeClass("menu-open");
       $(window).scrollTop(0);
+      $(".site-wrapper").scrollTop(0);
+      $("#footer-container").hide();
 
-      if(!firstpage){
-        $("#page-container").css({opacity:0});
-      }
+      if( !firstpage ) $("#page-container").css( {opacity:0} );
       
-      _t.page_collection.activatePageById( _pageid );
+      _t.page_collection.activatePageById( _pageid, _detailslug );
       
       if( firstpage ) firstpage = false;
     }
