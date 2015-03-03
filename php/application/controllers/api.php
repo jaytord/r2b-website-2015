@@ -23,17 +23,18 @@ class Api extends CI_Controller {
  		$all = $this->model->get();
 
  		foreach ($all as $key => $value) {
- 			$image = "http://media.click3x.com/images/410x410/".$value->image.".jpg";
+ 			$size 		= $_page_id == "assets" ? "700x394" : "410x410";
+ 			$filename 	= $_page_id == "assets" ? $value->filename : $value->thumbnail_image;
+ 			$image = "http://media.click3x.com/images/".$size."/".$filename.".jpg";
 
  			if(getimagesize($image)){
+	 			// $filename = strtolower( $value->title );
+	 			// $filename = str_replace(' ', '_', $filename); // Replaces all spaces with hyphens.
+	 			// $filename = preg_replace('/[^A-Za-z0-9\-\_]/', '', $filename); // Removes special chars.
 
-	 			$filename = strtolower( $value->title );
-	 			$filename = str_replace(' ', '_', $filename); // Replaces all spaces with hyphens.
-	 			$filename = preg_replace('/[^A-Za-z0-9\-\_]/', '', $filename); // Removes special chars.
+	 			//$this->model->update( array( "id"=>$value->id, "image"=>$filename ) );
 
-	 			$this->model->update( array( "id"=>$value->id, "image"=>$filename ) );
-
-	 			copy( $image, FCPATH."img/".$_page_id."/".$filename . ".jpg");
+	 			copy( $image, FCPATH."img/".$_page_id."/".$filename.".jpg");
 	 		} else {
 	 			echo "no image : ". $value->id;
 	 		}
@@ -147,6 +148,31 @@ class Api extends CI_Controller {
 		$result = curl_exec($ch);
 
 		return json_decode( strip_tags($result) );
+	}
+
+	public function parseassetmedia(){
+		echo "working";
+
+		$this->load->model("assets_model");
+		$this->load->model("assets_media_lu_model");
+		$this->load->model("media_model");
+
+		$allassets = $this->assets_model->get();
+
+		foreach ($allassets as $key => $asset) {
+			$media_id = $this->media_model->add(array(
+				"media_category_id"=>$asset->asset_type_id == 1 ? 1 : 2,
+				"filename"=>$asset->filename,
+				"media_type_id"=>$asset->asset_type_id == 1 ? 1 : 2
+			));
+
+			$this->assets_media_lu_model->add(array(
+				"media_id"=>$media_id,
+				"asset_id"=>$asset->id
+			));
+		}
+
+		var_dump($allassets);
 	}
 }
 

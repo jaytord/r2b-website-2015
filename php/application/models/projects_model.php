@@ -6,12 +6,6 @@ class Projects_Model extends C3X_Model
 
 	public function Projects_Model()
 	{
-        $this->load->model("assets_model");
-        $this->load->model("projects_asset_lu_model", "asset_lu_model");
-
-        $this->load->model("links_model");
-        $this->load->model("projects_link_lu_model", "link_lu_model");
-
 		$this->table = "projects";
 		$this->pk = "id";
     	$this->fields = array(
@@ -26,8 +20,16 @@ class Projects_Model extends C3X_Model
 	}
 
     function getassets($pid){
-        $query = $this->db->query("SELECT title,filename,description FROM projects_asset_lu LEFT JOIN assets ON projects_asset_lu.asset_id=assets.id WHERE project_id='".$pid."'");
-        return $query->result();
+        $query = $this->db->query("SELECT title,description,asset_type_name FROM projects_asset_lu LEFT JOIN assets ON projects_asset_lu.asset_id=assets.id LEFT JOIN asset_types ON assets.asset_type_id=asset_types.id WHERE project_id='".$pid."'");
+        $assets = $query->result();
+
+        //get media
+        foreach ($assets as $key => $asset) {
+            $query = $this->db->query("SELECT media_type_name,filename FROM assets_media_lu LEFT JOIN media ON assets_media_lu.media_id=media.id LEFT JOIN media_types ON media.meida_type_id=media_types.id WHERE asset_id='".$asset->id."'");
+            $asset->media = $query->result();
+        }
+
+        return $assets;
     }
 
     function getlinks($pid){

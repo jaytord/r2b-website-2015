@@ -3,48 +3,19 @@
  */
 
  div#about-page{
-
- 	.cfm-videoplayer-playbutton{
-		@media( min-width:$tablet-small){
-			left:40px;
-		}
-
-		@media( min-width:$tablet-large){
-			left:80px;
-		}
-
-		@media( min-width:$desktop){
-			left:140px;
-		}
-
-		@media( min-width:$desktop-large){
-			left:180px;
-		}
-	}
+ 	padding:0;
 
  	div.cfm-project-gallery.what-we-do{
-		padding:60px 20px;
+		padding:20px 20px;
 
 		@media( min-width:$tablet-small){
-			padding:80px 40px;
-		}
-
-		@media( min-width:$tablet-large){
-			padding:80px 80px;
-		}
-
-		@media( min-width:$desktop){
-			padding:80px 140px;
-		}
-
-		@media( min-width:$desktop-large){
-			padding:120px 180px;
+			padding:40px 40px;
 		}
 
  		ul{
 		    @media( min-width:$tablet-large){
 		    	@include prefix("column-count", 2);
-		    	@include prefix("column-gap", 20px);
+		    	@include prefix("column-gap", 10px);
 			}
 
  			li{
@@ -55,13 +26,13 @@
  				width:100%;
  				height: auto;
  				vertical-align: top;
- 				padding-bottom:20px;
+ 				padding-bottom:10px;
  				float: none;
 
  				div.project-inner{
 		 			padding:22px 20px 4px 20px;
-		 			border: 4px solid #eee;
-
+		 			border: 3px solid #eee;
+		 			
  					a{
  						padding-bottom:0;
  						height: auto;

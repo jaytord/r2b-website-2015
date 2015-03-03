@@ -7,8 +7,9 @@
 		padding-bottom: 100%;
 		background: #000;
 
-		@media( min-width:$tablet-small){ padding-bottom:70%; }
-		@media( min-width:$tablet-large){ padding-bottom:56.25%; }
+		@media( min-width:$tablet-small){ padding-bottom:95%; }
+		@media( min-width:$tablet-large){ padding-bottom:64%; }
+		@media( min-width:$desktop){ padding-bottom:56.25%; }
 		@media( min-width:$desktop-large){ padding-bottom:42%; }
 	}
 
@@ -35,29 +36,46 @@
 		z-index: 1;
 		cursor:pointer;
 
+		.cfm-videoplayer-poster-header{
+			.cfm-videoplayer-poster-header-inner{
+				h1,h2,h3{
+					margin:0 0 10px 0;
+					font-family:"gotham-light";
+				}
+
+				p{
+					margin:4px 0 10px 0;
+				}
+
+				.page-header-description{
+					@media( min-width:$desktop){
+				    	@include prefix("column-count", 2);
+				    	@include prefix("column-gap", 40px);
+					}
+
+					p{
+						@include prefix("column-break-inside", "avoid");
+						margin:0 0 10px 0;
+					}
+				}
+			}
+		}
+
 		.cfm-videoplayer-playbutton{
 			background:#fff;
 			position: absolute;
 			width: 80px; height:80px;
-			background:rgba(255,255,255,.6);
+			background:#FFF;
 			top: 50%; left: 50%;
 			border-radius:50%;
-			transform:scale(1);
 			margin:-40px 0 0 -40px;
-
-			@media( min-width:$tablet-small){
-				top:50px; margin:0;
-				left:40px;
-			}
-
-			@include prefix( "transition", .25s ease-in-out );
 
 			span.arrow{
 				width: 0; height: 0; 
 				position: absolute;
 				border-top: 20px solid transparent;
 				border-bottom: 20px solid transparent;
-				border-left: 30px solid rgba(0,0,0,.6);
+				border-left: 30px solid #111;
 				margin-left: -10px;
 				top: 50%; left:50%;
 				margin-top: -20px;
@@ -66,12 +84,10 @@
 
 		&:hover{
 			.cfm-videoplayer-playbutton{
-				transform:scale(1.08);
-
-				background:rgba(255,255,255,1);
+				background:#111;
 
 				span.arrow{
-					border-left: 30px solid rgba(0,0,0,1);
+					border-left: 30px solid #FFF;
 				}
 			}
 		}

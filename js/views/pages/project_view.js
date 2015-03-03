@@ -54,10 +54,9 @@ define([
 				router.navigate( this.getAttribute("data-navigate-to"),true );
 			});
 
-			//build logo
-			var logo_el = this.$el.find(".project-logo")[0];
-			var logo = new BgImageView({
-				el:logo_el
+			//build banner asset images
+			this.$el.find(".project-asset-image").each(function(){
+				var banner = new BgImageView({el:this});
 			});
 		},
 		onclose:function(){

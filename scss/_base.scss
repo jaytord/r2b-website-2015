@@ -5,7 +5,7 @@
 html{
 	font-family:"gotham-light";
 	font-size: 15px;
-	line-height:28px;
+	line-height:25px;
 	background-color:#FFF;
 	height:100%;
 	overflow:auto;
@@ -15,22 +15,20 @@ html{
 body{
 	height:100%;
 	overflow:hidden;
-
 }
 
 h1,h2,h3,h4,h5,h6,strong,b{
 	margin:0;
 	font-weight: normal;
-	
 	color:#444;
 }
 
 h1{
-	font-size:30px; line-height:34px;
+	font-size:30px; line-height:38px;
 }
 
 h2{
-	font-size:24px; line-height:24px;
+	font-size:24px; line-height:29px;
 }
 
 h3{
@@ -63,7 +61,12 @@ a:hover{
 			padding:0 24px 0 40px;
 		}
 	}
-
+	div#page-label{
+		position: absolute;
+		right: 90px;
+		top:12px;
+		color: #666;
+	}
 	div.logo{
 		position: relative;
 		margin: 14px 12px 13px 0;
@@ -107,31 +110,69 @@ a:hover{
 
 #page-container{
 	opacity:0;
+	padding-top:54px;
+
+	.page-header-navigation{
+		background-color: #FFF;
+
+		.page-header-inner{
+			padding:12px 20px 6px 20px;
+			
+			@media( min-width:$tablet-small){
+				padding:14px 40px 10px 40px;
+			}
+
+			.cfm-project-naviation{
+				ul{
+					display: block;
+					
+					li{
+						float: left;
+						padding:0;
+
+						a{
+							text-decoration:none;
+							color:#999;
+							border:none !important;
+
+							&:hover{
+								color: #000;
+							}
+						}
+
+						&.next-button, &.previous-button{
+							float: right;
+						}
+					}
+				}
+			}
+		}
+	}
 
 	.page-header{
-		padding:100px 20px 40px 20px;
+		padding:40px 20px 40px 20px;
 
 		@media( min-width:$tablet-small){
-			padding:110px 40px 60px 40px;
+			padding:60px 40px 60px 40px;
 		}
 
 		@media( min-width:$tablet-large){
-			padding:134px 80px 70px 80px;
+			padding:70px 80px 70px 80px;
 		}
 
 		@media( min-width:$desktop){
-			padding:144px 140px 80px 140px;
+			padding:80px 80px 80px 80px;
 		}
 
 		@media( min-width:$desktop-large){
-			padding:134px 180px 70px 180px;
+			padding:70px 80px 70px 80px;
 		}
 
 		background-color:#FFF;
 
 		.page-header-inner{
 			h1,h2,h3{
-				margin:0 0 0 0;
+				margin:0 0 10px 0;
 				font-family:"gotham-light";
 			}
 
@@ -162,50 +203,102 @@ a:hover{
  	border-top:8px solid #EEE;
 }
 
+.cfm-videoplayer{
+	video{
+		background:#FFF;
+	}
+
+	.cfm-videoplayer-poster{
+		.cfm-videoplayer-playbutton{
+			.playbutton-label{
+				h4{
+					color: #DDD;
+					line-height: 32px;
+					display: inline-block;
+					vertical-align: middle;
+				}
+
+				span.arrow{
+					position: inherit;
+					display: inline-block;
+					border-top: 6px solid transparent;
+					border-bottom: 6px solid transparent;
+					border-left: 8px solid #CCC;
+					margin:0 0 0 12px;
+					vertical-align: middle;
+				}
+			}
+		}
+
+		&:hover{
+			.cfm-videoplayer-playbutton{
+				.playbutton-label{
+					h4{
+					}
+
+					span.arrow{
+					}
+				}
+			}
+		}
+	}
+}
+
 div.cfm-project-gallery{
-	margin: 1px -1px 0 0;
+	margin: 0 0 0 0;
+	
+	background: #FFF;
+	border:none;
 
 	ul{
 		li{
 			div.project-inner{
+
  				a{
  					div.project-label{
- 						background-color:#FFF;
+ 						background-color:#222;
  						opacity: 0;
 
  						@include prefix( "transform", scale(.9) );
  						@include prefix( "transition", .25s ease-in-out );
 
  						div.project-label-inner{
- 							max-width: 60%;
  							background-color: transparent;
  							border-radius: 0;
  							border-left:none;
 	 						border-right:none;
- 							color: #333;
+	 						padding:40px;
 
  							@include prefix( "transform", scale(1.2) );
  							@include prefix( "transition", transform .25s ease-in-out );
 
  							h2{
- 								font-size: 18px;
+ 								opacity: .96;
+ 								font-family: "gotham-bold";
+ 								line-height: 30px;
+ 								text-transform: uppercase;
+ 								color: #EEE;
+
+ 								font-size: 32px;
+
+ 								* {
+ 									color: #FFF !important;
+ 								}
  							}
  						}
 					}
 
 					&:hover{
 						div.project-label{
-	 						opacity: 1;
-
+							opacity: 1;
 
 	 						@include prefix( "transform", scale(1) );
 
 	 						div.project-label-inner{
-	 							border:4px solid #EEE;
-
 	 							@include prefix( "transform", scale(1) );
 
-	 							h3{
+	 							h2{
+	 								color: #FFF;
 	 							}
 	 						}
 						}

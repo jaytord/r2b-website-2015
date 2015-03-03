@@ -51,6 +51,7 @@
             <div id="header-container">
                 <div class="header-inner">
                     <div id="logo" class="logo"><a href="<?= base_url(); ?>"></a></div>
+                    <div id="page-label">Case Studies</div>
                     <div id="hamburger" class="hamburger">
                         <div class="hamburger-inner">
                             <a>
@@ -108,8 +109,8 @@
                     <div class="mobile-menu-inner">
                         <ul>
                             <li><a data-navigate-to="home" href="<?= base_url(); ?>home"><h1>HOME</h1></a></li>
-                            <li><a data-navigate-to="projects" href="<?= base_url(); ?>projects"><h1>PROJECTS</h1></a></li>
                             <li><a data-navigate-to="casestudies" href="<?= base_url(); ?>casestudies"><h1>CASE STUDIES</h1></a></li>
+                            <li><a data-navigate-to="projects" href="<?= base_url(); ?>projects"><h1>PROJECTS</h1></a></li>
                             <li><a data-navigate-to="about" href="<?= base_url(); ?>home"><h1>ABOUT</h1></a></li>
                             <li><a data-navigate-to="clients" href="<?= base_url(); ?>clients"><h1>CLIENTS</h1></a></li>
                             <li><a data-navigate-to="contact" href="<?= base_url(); ?>contact"><h1>CONTACT</h1></a></li>

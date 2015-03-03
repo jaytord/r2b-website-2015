@@ -1,6 +1,6 @@
 <div id="about-page" class="page-content-inner">
 	<div class="page-header"><div class="page-header-inner">
-		<h2>ABOUT US</h2>
+		<h2>WHAT WE DO</h2>
 		<div class="page-header-description">
 			<p>Compelling, shareable content has become the primary catalyst for interactions between brands and consumers. Raison D'etre creates digital engagements and video content focusing on fashion, luxury, and beauty brands.</p>
 			<p>In a transmedia world, we bring the firepower and support of our parent company Click 3X and its interactive division ClickFire Media. We concept, design and execute entirely under one roof in our state-of-the-art studios here in Manhattan, creating across the entire spectrum of the media landscape from the big screen to mobile.</p>

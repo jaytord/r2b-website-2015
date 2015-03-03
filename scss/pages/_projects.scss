@@ -4,6 +4,26 @@
 
  div#projects-page, div#casestudies-page{
 	.cfm-project-gallery{
-		background:rgba(250,250,250,1);
+		background: #EEE;
+
+		ul{
+			margin:-1px 0 0 -1px;
+
+	 		li{
+				div.project-inner{
+					padding:0 0 1px 1px;
+
+		 			a.cfm-project{
+		 				.project-label{
+		 					.project-label-inner{
+		 						h4{
+		 							color:#FFF !important;
+		 						}
+		 					}
+		 				}
+		 			}
+		 		}
+		 	}
+		 }
 	}
 }

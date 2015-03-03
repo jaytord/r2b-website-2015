@@ -53,7 +53,12 @@ class Main extends CI_Controller {
 		if( $data->client_id > 0 ){
 			$this->load->model("clients_model");
 			$client = $this->clients_model->get(array("id"=>$data->client_id));
-			$client_logo = base_url()."img/clients/".$client->thumbnail_image.".jpg";
+
+			if( file_exists( FCPATH."img/clients/project/".$client->thumbnail_image.".jpg") ){
+				$client_logo = base_url()."img/clients/project/".$client->thumbnail_image.".jpg";
+			} else {
+				$client_logo = base_url()."img/clients/".$client->thumbnail_image.".jpg";
+			}
 		} else {
 			$client_logo = "http://placehold.it/410/111111/EEEEEE&text=LOGO";
 		}

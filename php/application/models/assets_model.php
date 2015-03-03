@@ -13,6 +13,12 @@ class Assets_Model extends C3X_Model
             'description'           	=> array("shown"=>true,     "label"=>"Description"),
             'asset_type_id'           	=> array("shown"=>true,     "label"=>"Asset Type ID")
 		);
+
+		function getlwithmedia($pid){
+	        $asset = $this->get($pid);
+	        
+	        return $query->result();
+	    }
 	}
 }
 

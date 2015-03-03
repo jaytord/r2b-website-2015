@@ -3,14 +3,10 @@
  */
 
  div#clients-page{
- 	
-
- 	
-
  	div.cfm-project-gallery{
  		padding:0 10px 20px 20px;
 
- 		@media( min-width:$tablet-small){ padding:0 30px 40px 40px; }
+ 		@media( min-width:$tablet-small){ padding:0 20px 40px 40px; }
 
 		ul{			
 	 		li{
@@ -23,6 +19,8 @@
 
 	 			div.project-inner{
 	 				padding:0 10px 10px 0;
+
+	 				@media( min-width:$tablet-small){ padding:0 20px 20px 0; }
 
 		 			a{
 		 				background-color: #000;
