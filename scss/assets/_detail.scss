@@ -1,0 +1,38 @@
+.project-asset{
+	&.detail-left, &.detail-right{
+		width: 100%;
+		max-width: 1000px;
+		margin:0 auto;
+
+		.project-asset-inner{
+			padding:0 20px 20px 20px;
+
+			@media(min-width:1080px){
+				padding:20px 0 40px 0;
+			}
+		}
+
+		@include clearfix();
+
+		.project-asset-image{
+			width: 100%;
+			padding-bottom:100%;
+			float: none;
+
+			@media(min-width:1080px){
+				width: 50%;
+				float: left;
+				padding-bottom:50%;
+			}
+		}
+	}
+
+	&.detail-right{
+		.project-asset-description{	
+			@media(min-width:1080px){
+				width: 50%;	
+				float: left;
+			}
+		}
+	}
+}

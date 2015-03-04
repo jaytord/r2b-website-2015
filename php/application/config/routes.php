@@ -41,18 +41,27 @@
 $route['default_controller'] 			= "main";
 $route['404_override'] 					= '';
 
-/* js template routes */	
-$route['template/(:any)/(:any)'] 		= 'main/pagedetailtemplate/$1/$2';
+/* js detail template routes */	
+$route['template/project/(:any)'] 		= 'main/projectdetailtemplate/$1';
+$route['template/casestudy/(:any)'] 	= 'main/projectdetailtemplate/$1/casestudy/casestudies';
+
+/* js page template routes */	
+$route['template/projects.php'] 		= 'main/pagetemplate/projects/project';
+$route['template/casestudies.php'] 		= 'main/pagetemplate/projects/casestudy';
 $route['template/(:any).php'] 			= 'main/pagetemplate/$1';
 
 /* api routes */
 $route['api/fetchimages/(:any)'] 		= 'api/fetchimages/$1';
 $route['api/parsedetails/(:any)'] 		= 'api/parsedetails/$1';
+$route['api/creatprojectcategories'] 	= 'api/creatprojectcategories';
 $route['api/parseassetmedia'] 			= 'api/parseassetmedia';
 $route['api/(:any)'] 					= 'api/index/$1';
 
 /* page routes */
-$route['(:any)/(:any)'] 				= 'main/pagedetail/$1/$2';
+$route['project/(:any)'] 				= 'main/projectdetail/$1';
+$route['casestudy/(:any)'] 				= 'main/projectdetail/$1/casestudy/casestudies';
+$route['projects'] 						= 'main/index/projects/project';
+$route['casestudies'] 					= 'main/index/projects/casestudy';
 $route['(:any)'] 						= 'main/index/$1';
 
 

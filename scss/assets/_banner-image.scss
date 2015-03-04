@@ -1,0 +1,11 @@
+.project-asset{
+	&.banner-image, &.banner-video{
+		.project-asset-inner{
+			padding:0;
+		}
+			
+		.project-asset-image{
+			width:100%;
+		}
+	}
+}

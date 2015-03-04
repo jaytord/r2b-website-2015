@@ -7,7 +7,6 @@ define([
 	var ProjectView = PageView.extend({
 		template: _.template( Template ),
 		videos:[],
-		id:"project",
 		onready:function(){
 			this.details_container_el = this.$el.find("#project-details-container").eq(0);
 

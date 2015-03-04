@@ -1,58 +1,63 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Main extends CI_Controller {
-	public function index( $_page_id = "home" )
+	/*==== PAGES =====*/
+	public function index( $_page_id = "home", $category_slug = "" )
 	{
-		$viewdata = $this->getpagedata($_page_id);
+		$viewdata = $this->getpagedata( $_page_id, $category_slug );
 
 		$this->load->view( 'index_view', $viewdata );
 	}
 
-	public function pagetemplate( $_page_id = "home" ){
-		$viewdata = $this->getpagedata( $_page_id );
-
-		$this->load->view( 'pages/' . $_page_id . "_view", $viewdata );
-	}
-
-	public function pagedetail( $_page_id, $_detailslug ){
-		$viewdata = $this->getpagedetaildata( $_page_id, $_detailslug );
+	//project detail
+	public function projectdetail( $_detail_slug, $category_slug = "project", $parent_slug = "projects" ){
+		$viewdata = $this->getprojectdetaildata( $_detail_slug, $category_slug );
+		$viewdata["page_id"] = "project";
+		$viewdata["category_slug"] = $category_slug; 
+		$viewdata["parent_slug"] = $parent_slug;
 
 		$this->load->view("index_view", $viewdata );
 	}
 
-	public function pagedetailtemplate( $_page_id, $_detailslug ){
-		$viewdata = $this->getpagedetaildata( $_page_id, $_detailslug );
+	/*==== JS PAGE TEMPLATES =====*/
+	//page js template
+	public function pagetemplate( $_page_id = "home", $category_slug = "" ){
+		$viewdata = $this->getpagedata( $_page_id, $category_slug );
+		$viewdata["template"] = true;
+
+		$this->load->view( 'pages/' . $_page_id . "_view", $viewdata );
+	}
+
+	//page detail js template called with ajax from project.js view
+	public function projectdetailtemplate( $_detailslug, $category_slug = "project", $parent_slug = "projects" ){
+		$viewdata = $this->getprojectdetaildata( $_detailslug, $category_slug );
+		$viewdata["page_id"] = "project"; 
+		$viewdata["category_slug"] = $category_slug; 
+		$viewdata["parent_slug"] = $parent_slug;
+		$viewdata["template"] = true;
 
 		$detail = $this->load->view( "project_detail_view", $viewdata, true);
-
 		echo $detail;
 	}
 
-	public function getpagedetaildata( $_page_id, $_detailslug ){
-		$parent = array();
+	/*==== DATA FUNCTIONS =====*/
+	public function getprojectdetaildata( $_detailslug, $_category_slug = ""){
+		$model = $this->load->model( "projects_model" );
+		$project_data = $this->projects_model->get( array( "slug"=>$_detailslug ) );
+		$project_data = $project_data[0];
 
-		//determine parent
-		switch($_page_id){
-			case 'project'		: $parent["slug"] = "projects"; 		$parent["title"] = "Projects"; 		break;
-			case 'casestudy'	: $parent["slug"] = "casestudies"; 		$parent["title"] = "Case Studies"; 	break;
-		}
+		$assets = $this->projects_model->getassets( $project_data->id );
+		$links = $this->projects_model->getlinks( $project_data->id );
 
-		$model = $this->load->model( $parent["slug"] . "_model", "detail_model" );
-		$data = $this->detail_model->get( array( "slug"=>$_detailslug ) );
-		$data = $data[0];
-
-		$assets = $this->detail_model->getassets( $data->id );
-		$links = $this->detail_model->getlinks( $data->id );
-
-		$nextrecord = $this->detail_model->nextrecord( $data->id );
+		$nextrecord = $this->projects_model->nextproject( $project_data->id, $_category_slug );
 		if($nextrecord) $nextrecord = $nextrecord->slug;
 
-		$previousrecord = $this->detail_model->previousrecord( $data->id );
+		$previousrecord = $this->projects_model->previousproject( $project_data->id, $_category_slug );
 		if($previousrecord) $previousrecord = $previousrecord->slug;
 
-		if( $data->client_id > 0 ){
+		if( $project_data->client_id > 0 ){
 			$this->load->model("clients_model");
-			$client = $this->clients_model->get(array("id"=>$data->client_id));
+			$client = $this->clients_model->get(array("id"=>$project_data->client_id));
 
 			if( file_exists( FCPATH."img/clients/project/".$client->thumbnail_image.".jpg") ){
 				$client_logo = base_url()."img/clients/project/".$client->thumbnail_image.".jpg";
@@ -63,25 +68,17 @@ class Main extends CI_Controller {
 			$client_logo = "http://placehold.it/410/111111/EEEEEE&text=LOGO";
 		}
 
-		//for case studies use the project page
-		$page_slug = $_page_id;
-
-		if($_page_id == "casestudy") $_page_id = "project";
-
 		return array( 
-			"page_id"=>$_page_id, 
-			"data"=>$data, 
+			"data"=>$project_data, 
 			"previous"=>$previousrecord, 
 			"next"=>$nextrecord, 
-			"parent"=>$parent, 
 			"assets"=>$assets, 
-			"links"=>$links, 
-			"page_slug"=>$page_slug, 
+			"links"=>$links,
 			"client_logo"=>$client_logo
 		);
 	}
 
-	public function getpagedata( $_page_id = "home" ){
+	public function getpagedata( $_page_id = "home", $_category_slug = "" ){
 		$model_name = $_page_id . "_model";
  		$model_path = APPPATH . "models/" . $model_name . ".php";
 
@@ -89,9 +86,13 @@ class Main extends CI_Controller {
 
  		if( file_exists( $model_path ) ){
 	 		$this->load->model( $model_name, 'model' );
-	 		$data = $this->model->get();
+	 		if( empty($_category_slug) ){
+	 			$data = $this->model->get();
+	 		} else {
+	 			$data = $this->model->getbycategory( $_category_slug );
+	 		}
 	 	}
 
-	 	return array( "page_id"=>$_page_id, "data"=>$data);
+	 	return array( "page_id"=>$_page_id, "data"=>$data, "category_slug"=>$_category_slug );
 	}
 }

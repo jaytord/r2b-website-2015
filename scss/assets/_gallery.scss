@@ -1,0 +1,30 @@
+.project-asset{
+	&.gallery{
+		width: 100%;
+		max-width: 1000px;
+		margin:0 auto;
+
+		.project-asset-inner{
+			@media(min-width:$tablet-small){
+				padding:40px 0 40px 0;
+			}
+		}
+
+		.asset-gallery{
+			ul{
+				list-style: none; padding:0; margin:0; 
+				@include clearfix;
+			}
+			li{
+				width: 100%;
+				float: left;
+				padding-bottom:100%;
+
+				@media(min-width:$tablet-small){
+					width: 50%;
+					padding-bottom:50%;
+				}
+			}
+		}
+	}
+}

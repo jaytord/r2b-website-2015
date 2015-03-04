@@ -174,6 +174,19 @@ class Api extends CI_Controller {
 
 		var_dump($allassets);
 	}
+
+	public function creatprojectcategories(){
+		$this->load->model("projects_model");
+		$this->load->model("projects_category_lu_model");
+
+		$all = $this->projects_model->get();
+		foreach ($all as $key => $project) {
+			$this->projects_category_lu_model->add(array(
+				"category_id"=>2,
+				"project_id"=>$project->id
+			));
+		}
+	}
 }
 
 /* End of file welcome.php */

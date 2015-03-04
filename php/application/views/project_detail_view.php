@@ -2,12 +2,12 @@
 	<div class="page-header-inner">
 		<div class="cfm-project-naviation cfm-navigation">
 			<ul>
-				<li><a href="<?php echo base_url().$parent["slug"]; ?>" data-navigate-to="<?php echo $parent["slug"]; ?>" ><span class="line-arrow-left line-arrow"></span><?php echo $parent["title"]; ?></a></li>
+				<li><a href="<?php echo base_url().$parent_slug; ?>" data-navigate-to="<?php echo $parent_slug; ?>" ><span class="line-arrow-left line-arrow"></span><?php echo $parent_slug == "casestudies" ? 'Case Studies' : 'Projects'; ?></a></li>
 				<?php if( !empty($next) ) : ?>
-				<li class="next-button"><a href="<?php echo base_url(). $page_slug. '/' . $next; ?>" data-navigate-to="<?php echo $page_slug. '/' . $next; ?>" ><span class="line-arrow-right line-arrow"></span></a></li>
+				<li class="next-button"><a href="<?php echo base_url(). $category_slug. '/' . $next; ?>" data-navigate-to="<?php echo $category_slug. '/' . $next; ?>" ><span class="line-arrow-right line-arrow"></span></a></li>
 				<?php endif; ?>
 				<?php if( !empty($previous) ) : ?>
-				<li class="previous-button"><a href="<?php echo base_url(). $page_slug. '/' . $previous; ?>" data-navigate-to="<?php echo $page_slug. '/' . $previous; ?>" ><span class="line-arrow-left line-arrow"></span></a></li>
+				<li class="previous-button"><a href="<?php echo base_url(). $category_slug. '/' . $previous; ?>" data-navigate-to="<?php echo $category_slug. '/' . $previous; ?>" ><span class="line-arrow-left line-arrow"></span></a></li>
 				<?php endif; ?>
 			</ul>
 		</div>
@@ -45,15 +45,16 @@
 				</div>
             </div>
 		</div>
+		<?php if( !empty($assets) && count($assets) > 1 ): ?><hr><?php endif; ?>
 	</div>
+	
 	<div class="project-assets-container">
-	<?php for($i = 1; $i<count($assets); $i++): $asset=$assets[$i] ?>
-		<div class="project-asset <?php echo $asset->asset_type_name; ?>">
-			<div class="project-asset-inner">
-			<? $this->load->view( "asset/".$asset->asset_type_name."_asset_view", array("asset"=>$asset) ); ?>
+		<?php for($i = 1; $i<count($assets); $i++): $asset=$assets[$i] ?>
+			<div class="project-asset <?php echo $asset->asset_type_name; ?>">
+				<div class="project-asset-inner">
+				<? $this->load->view( "asset/".$asset->asset_type_name."_asset_view", array("asset"=>$asset) ); ?>
+				</div>
 			</div>
-		</div>
-	<?php endfor; ?>
-	</div>
+		<?php endfor; ?>
 	</div>
 </div>

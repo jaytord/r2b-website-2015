@@ -19,13 +19,18 @@ class Projects_Model extends C3X_Model
         );
 	}
 
+    function getbycategory($category = "all"){
+        $query = $this->db->query("SELECT * FROM projects LEFT JOIN projects_category_lu ON projects.id=projects_category_lu.project_id LEFT JOIN categories ON categories.id=projects_category_lu.category_id WHERE category_name='".$category."' ORDER BY project_id");
+        return $query->result();
+    }
+
     function getassets($pid){
-        $query = $this->db->query("SELECT title,description,asset_type_name FROM projects_asset_lu LEFT JOIN assets ON projects_asset_lu.asset_id=assets.id LEFT JOIN asset_types ON assets.asset_type_id=asset_types.id WHERE project_id='".$pid."'");
+        $query = $this->db->query("SELECT asset_id,title,description,asset_type_name FROM projects_asset_lu LEFT JOIN assets ON projects_asset_lu.asset_id=assets.id LEFT JOIN asset_types ON assets.asset_type_id=asset_types.id WHERE project_id='".$pid."' ORDER BY asset_id");
         $assets = $query->result();
 
         //get media
         foreach ($assets as $key => $asset) {
-            $query = $this->db->query("SELECT media_type_name,filename FROM assets_media_lu LEFT JOIN media ON assets_media_lu.media_id=media.id LEFT JOIN media_types ON media.meida_type_id=media_types.id WHERE asset_id='".$asset->id."'");
+            $query = $this->db->query("SELECT media_id,media_type_name,filename,title FROM assets_media_lu LEFT JOIN media ON assets_media_lu.media_id=media.id LEFT JOIN media_types ON media.media_type_id=media_types.id WHERE asset_id='".$asset->asset_id."' ORDER BY media_id");
             $asset->media = $query->result();
         }
 
@@ -33,12 +38,20 @@ class Projects_Model extends C3X_Model
     }
 
     function getlinks($pid){
-        $query = $this->db->query("SELECT label,href FROM projects_link_lu LEFT JOIN links ON projects_link_lu.link_id=links.id WHERE project_id='".$pid."'");
+        $query = $this->db->query("SELECT link_id,label,href FROM projects_link_lu LEFT JOIN links ON projects_link_lu.link_id=links.id WHERE project_id='".$pid."' ORDER BY link_id");
         return $query->result();
     }
 
-	function lu_key(){
-        return $this->lu_key;
+    function nextproject($pid, $category_slug){
+        $query = $this->db->query("SELECT slug,project_id FROM projects LEFT JOIN projects_category_lu ON projects.id=projects_category_lu.project_id LEFT JOIN categories ON categories.id=projects_category_lu.category_id WHERE category_name='".$category_slug."' AND project_id > '".$pid."' ORDER BY project_id LIMIT 1");
+        $result = $query->result();
+        return !empty( $result ) ? $result[0] : array();
+    }
+
+    function previousproject($pid, $category_slug){
+        $query = $this->db->query("SELECT slug,project_id FROM projects LEFT JOIN projects_category_lu ON projects.id=projects_category_lu.project_id LEFT JOIN categories ON categories.id=projects_category_lu.category_id WHERE category_name='".$category_slug."' AND project_id < '".$pid."' ORDER BY project_id DESC LIMIT 1");
+        $result = $query->result();
+        return !empty( $result ) ? $result[0] : array();
     }
 }
 
