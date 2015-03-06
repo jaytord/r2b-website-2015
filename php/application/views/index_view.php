@@ -88,14 +88,7 @@
                                 </a>
                             </div>
                         </li>
-                        <li id="p2" class="pinterest-btn">
-                            <div class="project-inner">
-                                <a href="#">
-                                    <div class="project-label"><div class="project-label-inner"></div></div>
-                                </a>
-                            </div>
-                        </li>
-                        <li id="p2" class="instagram-btn">
+                        <li id="p3" class="instagram-btn">
                             <div class="project-inner">
                                 <a href="#">
                                     <div class="project-label"><div class="project-label-inner"></div></div>

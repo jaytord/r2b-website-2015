@@ -1,20 +1,23 @@
 <div id="home-page" class="page-content-inner">
-	<div id="reel-video" class="cfm-videoplayer" data-video-name="reel" data-poster="<?= base_url(); ?>img/posters/reel_poster.jpg">
+	<div id="reel-video" class="cfm-videoplayer" data-video-name="aboutcfm" data-poster="<?= base_url(); ?>img/posters/reel_poster.jpg">
 	    <div class="cfm-videoplayer-inner">
-	        <div class="cfm-videoplayer-player">
-	            <video class="cfm-videoplayer-mobile" width="960" height="540" controls></video>
-	            <div class="cfm-videoplayer-poster">
-	            	<div class="cfm-videoplayer-poster-header"><div class="cfm-videoplayer-poster-header-inner">
-					  <h1>STRATEGIC INSIGHTS</h1>
-					  <h2>POWERED BY&nbsp;TECHNOLOGY.</h2>
-					  <p>We create remarkable experiences through innovation in storytelling, technology, entertainment and social media.</p>
-					</div></div>
-	            	<div class="cfm-videoplayer-playbutton">
-	            		<div class="playbutton-label"><h4>Watch our reel</h4><span class="arrow"></span></div>
-	            	</div>
-	            </div>
-	            <video class="cfm-videoplayer-desktop" width="960" height="540" controls></video>
-	        </div>
+            <video class="cfm-videoplayer-mobile" width="960" height="540" controls></video>
+            <div class="cfm-videoplayer-poster">
+            	<div class="cfm-videoplayer-poster-header"><div class="cfm-videoplayer-poster-header-inner">
+				  <h1>STRATEGIC INSIGHTS</h1>
+				  <h2>POWERED BY&nbsp;TECHNOLOGY.</h2>
+				  <p>We create remarkable experiences through innovation in storytelling, technology, entertainment and social media.</p>
+				  <div class="cfm-videoplayer-playbutton"><span class="arrow"></span><span class="label">Our Reel</span></div>
+				</div></div>
+            </div>
+            <video class="cfm-videoplayer-desktop" width="960" height="540"></video>
+            <div class="cfm-video-controls">
+            	<ul>
+					<li class="cfm-video-play-pause-btn cfm-video-btn"></li>
+					<li class="cfm-video-fullscreen-btn cfm-video-btn"></li>
+					<li class="cfm-video-mute-btn cfm-video-btn"></li>
+				</ul><div class="cfm-video-progress-container"><a class="cfm-video-seek-bar"></a><input class="cfm-video-seek-bar-input" type="range" value="0"></div>
+			</div>
 	    </div>
 	</div>
 	<div class="cfm-project-gallery">

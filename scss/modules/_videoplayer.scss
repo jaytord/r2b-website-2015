@@ -2,10 +2,10 @@
 {
 	width:100%;
 	position: relative;
+	overflow:hidden;
 
 	.cfm-videoplayer-inner{
 		padding-bottom: 100%;
-		background: #000;
 
 		@media( min-width:$tablet-small){ padding-bottom:95%; }
 		@media( min-width:$tablet-large){ padding-bottom:64%; }
@@ -15,9 +15,9 @@
 
 	video{
 		position: absolute;
-		top:0; left:0;
-		width:100%;
-		height: 100%;
+		top:50%; left:50%;
+		width:auto;
+		height:100%;
 	}
 
 	video.cfm-videoplayer-desktop{
@@ -97,4 +97,88 @@
 		opacity: 0;
 		z-index: 2;
 	}
+
+	div.cfm-video-controls{
+		width: 100%;
+		position: absolute;
+		bottom: 0;
+		z-index: 0;
+		opacity: 1;
+
+		@include prefix(transition, opacity 500ms);
+
+		ul{
+			position: absolute;
+			bottom:30px; left:0;
+			line-height: 0;
+			list-style: none;
+			margin:0;padding:0;
+			width:100%;
+
+			li.cfm-video-btn{
+				background-color: rgba(255,255,255,.2);
+				line-height: 0;
+				margin:0; padding:0;
+				width: 40px; height:40px; 
+				float:right; margin-right:4px;
+
+				&:first-child{
+					float: left;
+				}
+
+				&.cfm-video-play-pause-btn{
+					margin-left: 20px; 
+					background-image: url("../img/play-pause-icon.png");
+
+					@media( min-width:$tablet-small){ margin-left: 40px }
+					@media( min-width:$desktop){ margin-left: 80px }
+				}
+				&.cfm-video-mute-btn{
+					background-image: url("../img/mute-icon.png");
+				}
+				&.cfm-video-fullscreen-btn{
+					background-image: url("../img/fullscreen-icon.png");
+					margin-right: 20px;
+
+					@media( min-width:$tablet-small){ margin-right: 40px }
+					@media( min-width:$desktop){ margin-right: 80px }
+				}
+				&.active{
+					background-position-x: -40px
+				}
+				&:hover{
+					background-position-y: -40px;
+				}
+			}
+		}
+
+		.cfm-video-progress-container{
+			line-height: 0;
+			margin:0; padding:0;
+			height: 20px; width: 100%;
+			background-position: 0 0;
+			background-repeat: no-repeat;
+			background-image: linear-gradient( rgba(255,255,255,.2), rgba(255,255,255,.2) );
+			background-size: 0 20px;
+
+			.cfm-video-seek-bar-input{
+				background-color:#FFF;
+				width: 100%;
+				height: 100%;
+				opacity: 0;
+			}
+
+			.cfm-video-seek-bar{
+				display: block;
+				position: absolute;
+				top:0; left: 0;
+				width: 0; height: 100%;
+				background-color: #FFF;
+			}
+		}
+	}
 }
+
+
+
+

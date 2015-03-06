@@ -12,13 +12,13 @@ define([
 			var video_el = _t.$el.find("#reel-video.cfm-videoplayer")[0];
 			var video_url = base_url + "video/" + video_el.getAttribute("data-video-name") + ".mp4";
 			var poster_url = video_el.getAttribute("data-poster");
-			console.log(video_url);
 
 			this.videoplayer = new VideoPlayerView({el:video_el});
 
 			this.videoplayer.load( video_url, "mp4", poster_url );
 		},
 		onclose:function(){
+			this.videoplayer.remove();
 		},
 	});
 	return HomeView;

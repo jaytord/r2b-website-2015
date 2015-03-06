@@ -5,10 +5,11 @@
 		margin:0 auto;
 
 		.project-asset-inner{
-			padding:0 20px 20px 20px;
+			display: inline-block;
+			padding:40px 40px 40px 40px;
 
 			@media(min-width:1080px){
-				padding:20px 0 40px 0;
+				padding:40px 0px 40px 0px;
 			}
 		}
 
@@ -19,7 +20,7 @@
 			padding-bottom:100%;
 			float: none;
 
-			@media(min-width:1080px){
+			@media(min-width:$tablet-large){
 				width: 50%;
 				float: left;
 				padding-bottom:50%;
@@ -29,9 +30,17 @@
 
 	&.detail-right{
 		.project-asset-description{	
-			@media(min-width:1080px){
+			.project-asset-description-inner{
+				padding:0 0 40px 0;
+			}
+
+			@media(min-width:$tablet-large){
 				width: 50%;	
 				float: left;
+
+				.project-asset-description-inner{
+					padding:0 40px 0 0;
+				}
 			}
 		}
 	}

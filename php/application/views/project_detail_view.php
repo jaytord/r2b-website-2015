@@ -15,16 +15,8 @@
 </div>
 <div class="project-detail">
 	<div class="featured-asset">
-		<div class="featured-asset-inner">
-			<div class="featured-asset-image project-asset-image" data-image="<?php echo base_url().'img/assets/'.$assets[0]->media[0]->filename; ?>.jpg"></div>
-			<div class="featured-asset-description">
-				<div class="featured-asset-description-inner">
-					<h1><?php echo $data->title; ?></h1>
-					<h2><?php echo $data->subtitle; ?></h2>
-					<p><?php echo $data->blurb; ?></p>
-					<div class="watch-video-button"><h4>Video case study</h4><span class="arrow"></span></div>
-				</div>
-			</div>
+		<div class="featured-asset-inner project-asset-inner">
+			<? $this->load->view( "asset/".$assets[0]->asset_type_name."_asset_view", array("asset"=>$assets[0]) ); ?>
 		</div>
 	</div>
 	<div class="project-about">
@@ -32,6 +24,7 @@
 			<div class="project-asset-image project-logo" data-image="<?php echo $client_logo; ?>"></div>
 			<div class="project-description">
 				<div class="project-description-inner">
+					<h1><?php echo $data->heading; ?></h1>
 					<p><?php echo $data->description; ?></p>
 					<div class="project-links-menu">
 			            <div class="project-links-menu-inner">

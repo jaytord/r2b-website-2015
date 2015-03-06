@@ -16,7 +16,9 @@ define([
 
 			_t.model.on( "change:active", function( _model ){
 				if( _model.get("active") == true )
-				_t.render();
+					_t.render();
+				else
+					_t.close();
 			});
 		},
 		oninit:function(){
@@ -65,7 +67,12 @@ define([
 		onready:function(){/*overridden*/},
 		close:function(){
 			this.onclose();
-		}
+			
+			_.each(this.project_galleries,function(gallery){
+				gallery.remove();
+			});
+		},
+		onclose:function(){ /*overridden*/}
 	});
 	return PageView;
 });

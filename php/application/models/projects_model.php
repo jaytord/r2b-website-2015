@@ -12,6 +12,8 @@ class Projects_Model extends C3X_Model
             'id'                                    => array("shown"=>false,    "label"=>"ID"),
             'slug'                                  => array("shown"=>false,    "label"=>"Slug"),
             'title'                                 => array("shown"=>true,     "label"=>"Title"),
+            'heading'                               => array("shown"=>true,     "label"=>"Heading"),
+            'subhead'                               => array("shown"=>true,     "label"=>"Subhead"),
             'description'                           => array("shown"=>true,     "label"=>"Description"),
             'thumbnail_image'                       => array("shown"=>true,     "label"=>"Thumbnail Image"),
             'detail_name'                           => array("shown"=>true,     "label"=>"Detail Name"),
@@ -19,13 +21,13 @@ class Projects_Model extends C3X_Model
         );
 	}
 
-    function getbycategory($category = "all"){
-        $query = $this->db->query("SELECT * FROM projects LEFT JOIN projects_category_lu ON projects.id=projects_category_lu.project_id LEFT JOIN categories ON categories.id=projects_category_lu.category_id WHERE category_name='".$category."' ORDER BY project_id");
+    function getbycategory($category = "project"){
+        $query = $this->db->query("SELECT * FROM ( SELECT category_name,category_id,project_id FROM projects_category_lu CROSS JOIN categories ON categories.id = projects_category_lu.category_id AND category_name = '".$category."' ) AS filtered_lu LEFT JOIN projects ON projects.id = project_id ORDER BY 'order' DESC,id DESC");
         return $query->result();
     }
 
     function getassets($pid){
-        $query = $this->db->query("SELECT asset_id,title,description,asset_type_name FROM projects_asset_lu LEFT JOIN assets ON projects_asset_lu.asset_id=assets.id LEFT JOIN asset_types ON assets.asset_type_id=asset_types.id WHERE project_id='".$pid."' ORDER BY asset_id");
+        $query = $this->db->query("SELECT asset_id,title,heading,subhead,blurb,description,asset_type_name FROM projects_asset_lu LEFT JOIN assets ON projects_asset_lu.asset_id=assets.id LEFT JOIN asset_types ON assets.asset_type_id=asset_types.id WHERE project_id='".$pid."' ORDER BY asset_id");
         $assets = $query->result();
 
         //get media
