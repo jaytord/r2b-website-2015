@@ -72,6 +72,15 @@ define([
       _t.page_collection.activatePageById( _pageid, _detailslug );
       
       if( firstpage ) firstpage = false;
+
+      $("#page-labels ul li").each( function(k,li){
+        if( li.getAttribute("data-page-id") == _pageid ){
+          li.className = "active";
+          $("#page-labels ul").css("margin-top", (-li.offsetTop) + "px");
+        } else {
+          li.className = "";
+        }
+      });
     }
   });
 

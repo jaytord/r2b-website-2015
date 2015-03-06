@@ -51,7 +51,6 @@
             <div id="header-container">
                 <div class="header-inner">
                     <div id="logo" class="logo"><a href="<?= base_url(); ?>"></a></div>
-                    <div id="page-label">Case Studies</div>
                     <div id="hamburger" class="hamburger">
                         <div class="hamburger-inner">
                             <a>
@@ -62,6 +61,7 @@
                             </a>
                         </div>
                     </div>
+                    <div id="page-labels"><ul><li data-page-id="casestudies">CASE STUDIES</li><li data-page-id="casestudy">CASE STUDY</li><li data-page-id="projects">PROJECTS</li><li data-page-id="project">PROJECT</li><li data-page-id="about">ABOUT</li><li data-page-id="clients">CLIENTS</li><li data-page-id="contact">CONTACT</li></ul></div>
                 </div>
             </div>
 

@@ -61,11 +61,42 @@ a:hover{
 			padding:0 24px 0 40px;
 		}
 	}
-	div#page-label{
-		position: absolute;
-		right: 90px;
-		top:12px;
-		color: #666;
+	div#page-labels{
+		margin-top:2px;
+		float: right;
+		height: 48px;
+		overflow: hidden;
+		display: none;
+
+		@media( min-width:$tablet-small){
+			display: block;
+		}
+
+		ul{
+			position: relative;
+			list-style:none;
+			margin:0; padding:0;
+			text-align: right;
+			
+			@include prefix( "transition", margin-top .4s);
+			@include prefix( "transition-delay", 1s);
+
+			li{
+				color: #CCC;
+				font-size: 14px;
+				margin:0; padding:0;
+				opacity:0; text-align: right;
+				line-height:48px;
+
+				@include prefix( "transition", opacity .4s);
+
+				&.active{
+					@include prefix( "transition-delay", 1s);
+
+					opacity:1;
+				}
+			}
+		}
 	}
 	div.logo{
 		position: relative;
