@@ -42,12 +42,12 @@ $route['default_controller'] 			= "main";
 $route['404_override'] 					= '';
 
 /* js detail template routes */	
-$route['template/project/(:any)'] 		= 'main/projectdetailtemplate/$1';
-$route['template/casestudy/(:any)'] 	= 'main/projectdetailtemplate/$1/casestudy/casestudies';
+$route['template/project/(:any)'] 		= 'main/projectdetailtemplate/$1/project/projects';
+$route['template/campaign/(:any)'] 		= 'main/projectdetailtemplate/$1/campaign/campaigns';
 
 /* js page template routes */	
 $route['template/projects.php'] 		= 'main/pagetemplate/projects/project';
-$route['template/casestudies.php'] 		= 'main/pagetemplate/projects/casestudy';
+$route['template/campaigns.php'] 		= 'main/pagetemplate/campaigns/campaign';
 $route['template/(:any).php'] 			= 'main/pagetemplate/$1';
 
 /* api routes */
@@ -58,14 +58,13 @@ $route['api/parseassetmedia'] 			= 'api/parseassetmedia';
 $route['api/(:any)'] 					= 'api/index/$1';
 
 /* page routes */
-$route['project/(:any)'] 				= 'main/projectdetail/$1';
-$route['casestudy/(:any)'] 				= 'main/projectdetail/$1/casestudy/casestudies';
+$route['project/(:any)'] 				= 'main/projectdetail/$1/project/projects';
+$route['campaign/(:any)'] 				= 'main/projectdetail/$1/campaign/campaigns';
+
 $route['projects'] 						= 'main/index/projects/project';
-$route['casestudies'] 					= 'main/index/projects/casestudy';
+$route['campaigns'] 					= 'main/index/campaigns/campaign';
+
 $route['(:any)'] 						= 'main/index/$1';
-
-
-
-
 /* End of file routes.php */
+
 /* Location: ./application/config/routes.php */

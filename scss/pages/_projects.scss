@@ -4,20 +4,15 @@
 
  div#projects-page, div#casestudies-page{
 	.cfm-project-gallery{
-		background: #EEE;
-
 		ul{
-			margin:-1px 0 0 -1px;
-
 	 		li{
-				div.project-inner{
-					padding:0 0 1px 1px;
+ 				@media( min-width:$desktop-large){ width:25%; }
 
+				div.project-inner{
 		 			a.cfm-project{
 		 				.project-label{
 		 					.project-label-inner{
 		 						h4{
-		 							color:#FFF !important;
 		 						}
 		 					}
 		 				}

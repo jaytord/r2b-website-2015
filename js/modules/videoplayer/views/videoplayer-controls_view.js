@@ -2,6 +2,7 @@ define([
   'backbone'
 ], function(Backbone){
 	var VideoPlayerControlsView = Backbone.View.extend({
+        hasplayed:false,
 		initialize:function(options){
 			this.video_el                    = options.video_el;
 
@@ -19,7 +20,7 @@ define([
         	var _t = this;
 
             // Event listener for the play/pause button
-            $(_t.playButton).click(function() {
+            $(_t.playButton).mousedown(function() {
                 if (_t.video_el.paused == true) {
                     _t.video_el.play();
                 } else {
@@ -66,6 +67,8 @@ define([
                 _t.hidecontrolsto = setTimeout( function(){
                 	_t.hideControls();
                 }, 1000);
+
+                console.log("mouse move");
             });
 
             $(_t.video_el).on("mouseout", function() {
@@ -100,11 +103,14 @@ define([
         },
 		toPlayingState:function(){
 			this.playing = true;
+            this.hasplayed = true;
 
 			console.log("toPlayingState", this.playing);
 
 			if( !$(this.playButton).hasClass("active") )
 				$(this.playButton).addClass("active");
+
+            if(ipad == true) this.showControls();
 		},
 		toPausedState:function(){
 			this.playing = false;
@@ -122,12 +128,13 @@ define([
 		showControls:function(){
 			console.log("show");
 
+            if(this.hasplayed)
 			this.el.style.opacity = ".75";
 		},
 		hideControls:function(){
 			console.log("hide", this.playing);
 
-			if(this.playing)
+			if(this.playing && ipad == false)
 				this.el.style.opacity = "0";
 		}
 	});

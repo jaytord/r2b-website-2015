@@ -12,7 +12,7 @@ class Main extends CI_Controller {
 	//project detail
 	public function projectdetail( $_detail_slug, $category_slug = "project", $parent_slug = "projects" ){
 		$viewdata = $this->getprojectdetaildata( $_detail_slug, $category_slug );
-		$viewdata["page_id"] = "project";
+		$viewdata["page_id"] = ($parent_slug == "campaigns" ? "project" : $parent_slug);
 		$viewdata["category_slug"] = $category_slug; 
 		$viewdata["parent_slug"] = $parent_slug;
 
@@ -31,7 +31,7 @@ class Main extends CI_Controller {
 	//page detail js template called with ajax from project.js view
 	public function projectdetailtemplate( $_detailslug, $category_slug = "project", $parent_slug = "projects" ){
 		$viewdata = $this->getprojectdetaildata( $_detailslug, $category_slug );
-		$viewdata["page_id"] = "project"; 
+		$viewdata["page_id"] = ($parent_slug == "campaigns" ? "project" : $parent_slug); 
 		$viewdata["category_slug"] = $category_slug; 
 		$viewdata["parent_slug"] = $parent_slug;
 		$viewdata["template"] = true;
@@ -55,15 +55,8 @@ class Main extends CI_Controller {
 		$previousrecord = $this->projects_model->previousproject( $project_data->id, $_category_slug );
 		if($previousrecord) $previousrecord = $previousrecord->slug;
 
-		if( $project_data->client_id > 0 ){
-			$this->load->model("clients_model");
-			$client = $this->clients_model->get(array("id"=>$project_data->client_id));
-
-			if( file_exists( FCPATH."img/clients/project/".$client->thumbnail_image.".jpg") ){
-				$client_logo = base_url()."img/clients/project/".$client->thumbnail_image.".jpg";
-			} else {
-				$client_logo = base_url()."img/clients/".$client->thumbnail_image.".jpg";
-			}
+		if( !empty( $project_data->client_logo ) ){
+			$client_logo = base_url()."img/client_logos/".$project_data->client_logo.".jpg";
 		} else {
 			$client_logo = "http://placehold.it/410/111111/EEEEEE&text=LOGO";
 		}
@@ -79,7 +72,7 @@ class Main extends CI_Controller {
 	}
 
 	public function getpagedata( $_page_id = "home", $_category_slug = "" ){
-		$model_name = $_page_id . "_model";
+		$model_name = ($_page_id == "campaigns" ? "projects" : $_page_id) . "_model";
  		$model_path = APPPATH . "models/" . $model_name . ".php";
 
  		$data = array();

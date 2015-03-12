@@ -2,85 +2,91 @@
  * Project Detail Page Styles
  */
 
- #project-page{
-
- 	.cfm-videoplayer{
-		.cfm-videoplayer-poster{
-			background-position:left center;
-
-			.cfm-videoplayer-poster-header{
-				margin-left: 50%;
-				display: none;
-
-				@media(min-width:$tablet-large){
-					display: block;
-				}
-
-				.cfm-videoplayer-poster-header-inner{
-					padding:80px 80px 20px 0;
-
-					@media(min-width:$tablet-large){
-						padding:100px 80px 20px 0;
-					}
-
-					@media(min-width:$desktop){
-						padding:120px 80px 20px 0;
-					}
-
-					h1{
-						font-family: "gotham-bold";
-					}
-
-					h2{
-						margin-top: 4px;
-						color: #FFF;
-						font-family: "gotham-light";
-					}
-
-					p{
-						color: #DDD;
-					}
-
-					.cfm-videoplayer-playbutton{
-						.label{
-							color: #DDD;
-						}
-						.arrow{
-							border-left: 40px solid #DDD;
-						}
-					}
-				}
-			}
-
-			&:hover{
-				.cfm-videoplayer-poster-header{
-					.cfm-videoplayer-playbutton{
-						.arrow{
-							border-left: 40px solid #FFF;
-						}
-						.label{
-							color: #FFF;
-						}
-					}
-				}
-			}
-		}
-	}
-
+#project-page{
 	.project-asset-image{
 		background-size:cover;
 		background-repeat:no-repeat;
 		background-position:center center;
 		width: 100%;
 		padding-bottom:100%;
+		position: relative;
 
-		@media( min-width:$tablet-small){ padding-bottom:80%; }
-		@media( min-width:$tablet-large){ padding-bottom:56.25%; }
-		@media( min-width:$desktop){ padding-bottom:56.25%; }
-		@media( min-width:$desktop-large){ padding-bottom:56.25%; }
+		@media( min-width:$tablet-small){ padding-bottom:60%; }
+		@media( min-width:$tablet-large){ padding-bottom:50%; }
 	}
 
 	.project-detail{
+		.project-heading{
+			max-width: 1000px;
+			margin:0 auto;
+			position: relative;
+
+			.project-heading-inner{
+				padding:70px 14px 70px 20px;
+
+				@media(min-width:$tablet-small){
+					padding:70px 30px 70px 40px;
+				}
+
+				@media(min-width:1080px){
+					padding:70px 0 70px 0;
+				}
+					
+				h2{
+					font-family: "gotham-book";
+					color: $cfmred;
+					margin-bottom: 8px;
+					font-size: 24px;
+					line-height: 30px;
+				}
+
+				h1{
+					font-family: "gotham-light";
+					color: #777;
+					font-size: 36px;
+					line-height: 44px;
+					letter-spacing: -1px;
+				}
+
+				.video-anchor-link{
+					position: static;
+					text-align: left;
+					margin:20px 0 0 6px;
+					width: auto;
+
+					a{
+						display: inline-block;
+
+						span.arrow{
+							display: inline-block;
+							border-top: 6px solid transparent;
+							border-bottom: 6px solid transparent;
+							border-left: 8px solid #CCC;
+							vertical-align: middle;
+							border-right:none;
+						}
+
+						span.label{
+							vertical-align: middle;
+							display: inline-block;
+							color:#CCC;
+							margin:0 0 0 10px;
+						}
+
+						&:hover{
+							span.arrow{
+								border-left: 8px solid #555;
+							}
+
+							span.label{
+								color:#555;
+							}
+						}
+					}
+				}
+			}
+			
+		}
 		.project-asset{
 			display: block;
 
@@ -111,14 +117,14 @@
 			margin:0 auto;
 
 			.project-about-inner{
-				padding:40px 14px 40px 20px;
+				padding:70px 14px 70px 20px;
 
 				@media(min-width:$tablet-small){
-					padding:40px 30px 40px 40px;
+					padding:70px 30px 70px 40px;
 				}
 
 				@media(min-width:1080px){
-					padding:40px 0 40px 0;
+					padding:70px 0 70px 0;
 				}
 
 				@include clearfix();
@@ -144,17 +150,18 @@
 					float: left;
 
 					.project-description-inner{
-						h1{
-							margin-top:-3px;
-							font-family: "gotham-bold";
+						p{
+							margin-top:-8px;
+							margin-bottom: 32px;
+						}
+						p.credits{
+							margin-top:40px;
+							border-top:1px solid #eee;
+							padding-top:40px;
 
-							@media(min-width:$tablet-large){
-								display: none;
-							}
-
-							span{
-								color: #333 !important;
-								text-transform: uppercase;
+							span.description-label{
+								color: $cfmred;
+								margin-right: 8px;
 							}
 						}
 					}
@@ -169,10 +176,6 @@
 							h1{
 								margin-top:-3px;
 								font-family: "gotham-bold";
-							}
-
-							p{
-								margin-top:0;
 							}
 						}
 					}
@@ -191,24 +194,28 @@
 							li{
 								float: left;
 								margin: 0 10px 10px 0;
-								border:4px solid #eee;
+								border:1px solid $cfmred;
 
 								@include prefix( "transition", border .25s ease-in-out );
 
 								a{
 									display: inline-block;
-									padding:6px 14px 4px 14px;
+									padding:4px 24px 4px 24px;
 									text-decoration: none;
 									background-color:#FFF;
+
+									h4{
+										font-size: 16px;
+										font-family: "gotham-book";
+										color: $cfmred;
+									}
 
 									@include prefix( "transition", background-color .25s ease-in-out );
 								}
 
 								&:hover{
-									border:4px solid #111;
-
 									a{
-										background-color:#111;
+										background-color:$cfmred;
 
 										h4{
 											color: #EEE;
@@ -222,4 +229,65 @@
 			}
 		}
 	}
+}
+
+html:not(.mobile){
+	#project-page{
+	 	.cfm-videoplayer{
+			video{
+				background:#FFF;
+			}
+
+			.cfm-videoplayer-poster{
+				.cfm-videoplayer-playbutton{
+					padding:0 24px 0 0;
+					border:1px solid $cfmred;
+					border-radius:0;
+					width:auto;
+					height: auto;
+					background:#FFF;
+					top: 20px; left: 20px;
+	  				margin:0;
+
+	  				@media(min-width:$tablet-small){
+	  					top: 40px; left: 40px;
+	  				}
+
+					span.arrow{
+						position: static;
+						border-top: 10px solid transparent;
+						border-bottom: 10px solid transparent;
+						border-left: 14px solid $cfmred;
+						margin:-1px 0 0 24px;
+						display: inline-block;
+						vertical-align: middle;
+					}
+				
+					span.label{
+						background-color:$cfmred;
+						padding:0 20px 0 20px;
+						display: inline-block;
+						font-size:13px;
+						line-height: 50px;
+						color: #FFF;
+						font-family: "gotham-book";
+					}
+				}
+
+				&:hover{
+					.cfm-videoplayer-playbutton{
+						border:1px solid #555;
+
+						span.arrow{
+							border-left: 14px solid #555;
+						}
+					
+						span.label{
+							background-color:#555;
+						}
+					}
+				}
+			}
+		}
+ 	}
 }

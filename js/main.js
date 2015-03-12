@@ -43,6 +43,11 @@ require([
 
         /*--------mp4---------*/
         mp4 = ( Modernizr.video && document.createElement('video').canPlayType('video/mp4; codecs=avc1.42E01E,mp4a.40.2') );
+        if(mp4 == "probably" || mp4 == "maybe"){
+            mp4 = true;
+        } else {
+            mp4 = false;
+        }
         
         /*--------ie,ie8---------*/
         if( uagent.search( "msie" ) > -1 ) ie = true;

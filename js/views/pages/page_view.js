@@ -45,17 +45,26 @@ define([
 				router.navigate( this.getAttribute("data-navigate-to"),true );
 			});
 
+			this.$el.find('a[href*=#]').click(function(e){     
+            	e.preventDefault();
+	            $('body').animate( {scrollTop: ($(this.hash).offset().top-33) + "px"} , 500);
+	        });
+
 			this.onready();
 			
 			$("#page-container").delay(300).animate({opacity:1},400);
-			$("#footer-container").delay(700).fadeIn(400);
+			$("#footer-container").delay(700).animate({opacity:1},400);
+
+			console.log("page ready");
 		},
 		buildprojectgalleries:function(){
+			console.log("build project galleries");
+
 			var _t = this;
 
 			_t.project_galleries = [];
 
-			$(".cfm-project-gallery").each( function( i, _el ){
+			this.$el.find(".cfm-project-gallery").each( function( i, _el ){
 				var project_gallery = new ProjectGalleryView( {
 				  id:_el.getAttribute("id"), el:_el
 				});

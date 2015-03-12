@@ -4,21 +4,33 @@ define([
   'modules/videoplayer/views/videoplayer_view'
 ], function(PageView, Template, VideoPlayerView){
 	var HomeView = PageView.extend({
+		videos:[],
 		template: _.template( Template ),
 		id:"home",
 		onready:function(){
 			var _t = this;
 
-			var video_el = _t.$el.find("#reel-video.cfm-videoplayer")[0];
-			var video_url = base_url + "video/" + video_el.getAttribute("data-video-name") + ".mp4";
-			var poster_url = video_el.getAttribute("data-poster");
+			_t.$el.find(".cfm-videoplayer").each(function(){
+				var url = this.getAttribute("data-video-name"),
+				poster = this.getAttribute("data-poster"),
+				video = new VideoPlayerView({el:this});
 
-			this.videoplayer = new VideoPlayerView({el:video_el});
+				url += mp4 ? ".mp4" : ".webm";
+				
+				video.load( url, mp4 ? "mp4" : "webm", poster );
 
-			this.videoplayer.load( video_url, "mp4", poster_url );
+				_t.videos.push(video);
+			});
+		},
+		resetothervideos:function(_id){
+			$.each(this.videos,function(i,v){
+				if(v.id != _id) v.reset();
+			});
 		},
 		onclose:function(){
-			this.videoplayer.remove();
+			$.each(this.videos,function(i,v){
+				v.remove();
+			});
 		},
 	});
 	return HomeView;

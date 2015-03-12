@@ -3,15 +3,15 @@ define([
   'collections/page_collection',
   'pages/home_view',
   'pages/projects_view',
-  'pages/casestudies_view',
+  'pages/campaigns_view',
   'pages/about_view',
   'pages/clients_view',
-  'pages/project_view',
   'pages/contact_view',
+  'pages/project_view',
   'modules/navigation/views/navigation_view',
   'modules/videoplayer/views/videoplayer_view',
   'modules/hamburger/hamburger_view'
-], function (Backbone, PageCollection, HomeView, ProjectsView, CaseStudiesView, AboutView, ClientsView, ProjectView, ContactView, NavigationView, VideoPlayerView, HamburgerView){
+], function (Backbone, PageCollection, HomeView, ProjectsView, CampaignsView, AboutView, ClientsView, ContactView, ProjectView, NavigationView, VideoPlayerView, HamburgerView){
   var Router   = Backbone.Router.extend({
     initialize:function(){
       var _t = this;
@@ -21,12 +21,12 @@ define([
       _t.page_views = [   
         new HomeView({ collection:_t.page_collection }),
         new ProjectsView({ collection:_t.page_collection }),
-        new CaseStudiesView({ collection:_t.page_collection }),
+        new CampaignsView({ collection:_t.page_collection }),
         new AboutView({ collection:_t.page_collection }),
         new ClientsView({ collection:_t.page_collection }),
-        new ProjectView({ collection:_t.page_collection, id:"casestudy"}),
+        new ContactView({ collection:_t.page_collection }),
         new ProjectView({ collection:_t.page_collection, id:"project"}),
-        new ContactView({ collection:_t.page_collection })
+        new ProjectView({ collection:_t.page_collection, id:"campaign"})
       ];
 
       $("#logo a").click(function(event){
@@ -64,9 +64,9 @@ define([
 
       $(document.documentElement).removeClass("menu-open");
       $(window).scrollTop(0);
-      $(".site-wrapper").scrollTop(0);
-      $("#footer-container").hide();
-
+      // $(".site-wrapper").scrollTop(0);
+      
+      $("#footer-container").css("opacity",0);
       if( !firstpage ) $("#page-container").css( {opacity:0} );
       
       _t.page_collection.activatePageById( _pageid, _detailslug );

@@ -1,5 +1,5 @@
 <div id="home-page" class="page-content-inner">
-	<div id="reel-video" class="cfm-videoplayer" data-video-name="aboutcfm" data-poster="<?= base_url(); ?>img/posters/reel_poster.jpg">
+	<div id="reel-video" class="cfm-videoplayer" data-video-name="video/2015_R2B_WebTeaser" data-poster="<?= base_url(); ?>img/assets/video_posters/reel_poster.jpg">
 	    <div class="cfm-videoplayer-inner">
             <video class="cfm-videoplayer-mobile" width="960" height="540" controls></video>
             <div class="cfm-videoplayer-poster">
@@ -7,7 +7,7 @@
 				  <h1>STRATEGIC INSIGHTS</h1>
 				  <h2>POWERED BY&nbsp;TECHNOLOGY.</h2>
 				  <p>We create remarkable experiences through innovation in storytelling, technology, entertainment and social media.</p>
-				  <div class="cfm-videoplayer-playbutton"><span class="arrow"></span><span class="label">Our Reel</span></div>
+				  <div class="cfm-videoplayer-playbutton"><span class="arrow"></span></div>
 				</div></div>
             </div>
             <video class="cfm-videoplayer-desktop" width="960" height="540"></video>
@@ -31,7 +31,7 @@
 			</li>
 			<li id="p2">
 				<div class="project-inner">
-					<a href="<?= base_url(); ?>casestudies" data-navigate-to="casestudies">
+					<a href="<?= base_url(); ?>campaigns" data-navigate-to="campaigns">
 						<div class="project-label"><div class="project-label-inner"><h3>CASE STUDIES</h3></div></div>
 					</a>
 				</div>

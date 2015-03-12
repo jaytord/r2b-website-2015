@@ -16,10 +16,6 @@ div.cfm-project-gallery{
  			float:left;
  			width:100%;
 
- 			@media( min-width:$tablet-small){ width:50%; }
- 			@media( min-width:$tablet-large){ width:33.33334%; }
- 			@media( min-width:$desktop-large){ width:25%; }
-
  			div.project-inner{
  				padding:0;
  				margin:0;

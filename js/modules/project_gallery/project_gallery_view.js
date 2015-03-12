@@ -4,6 +4,8 @@ define([
 ], function(Backbone, ProjectView){
 	var ProjectGalleryView = Backbone.View.extend({
 		initialize:function(){
+			console.log("initialize gallery");
+
 			var _t = this;
 
 			_t.collection = new Backbone.Collection();

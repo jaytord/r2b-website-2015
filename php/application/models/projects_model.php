@@ -17,12 +17,12 @@ class Projects_Model extends C3X_Model
             'description'                           => array("shown"=>true,     "label"=>"Description"),
             'thumbnail_image'                       => array("shown"=>true,     "label"=>"Thumbnail Image"),
             'detail_name'                           => array("shown"=>true,     "label"=>"Detail Name"),
-            'client_id'                             => array("shown"=>true,     "label"=>"Client Id")
+            'client_logo'                           => array("shown"=>true,     "label"=>"Client Logo")
         );
 	}
 
-    function getbycategory($category = "project"){
-        $query = $this->db->query("SELECT * FROM ( SELECT category_name,category_id,project_id FROM projects_category_lu CROSS JOIN categories ON categories.id = projects_category_lu.category_id AND category_name = '".$category."' ) AS filtered_lu LEFT JOIN projects ON projects.id = project_id ORDER BY 'order' DESC,id DESC");
+    function getbycategory( $category = "casestudy" ){
+        $query = $this->db->query("SELECT * FROM ( SELECT category_name,category_id,project_id FROM projects_category_lu CROSS JOIN categories ON categories.id = projects_category_lu.category_id AND category_name = '".$category."' ) AS filtered_lu LEFT JOIN projects ON projects.id = project_id ORDER BY `order`");
         return $query->result();
     }
 

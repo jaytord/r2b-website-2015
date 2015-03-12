@@ -39,10 +39,12 @@ define([
 			//build videos
 			_t.details_container_el.find(".cfm-videoplayer").each(function(){
 				var video_url 		= this.getAttribute( "data-video" );
+				video_url += mp4 ? ".mp4" : ".webm";
+				
 				var poster_url 		= this.getAttribute( "data-poster" );
 				var videoplayer 	= new VideoPlayerView( { el:this } );
 
-				videoplayer.load( video_url, "mp4", poster_url );
+				videoplayer.load( video_url, mp4 ? "mp4" : "webm", poster_url );
 				
 				_t.videos.push(videoplayer);
 			});
@@ -57,6 +59,11 @@ define([
 			this.$el.find(".project-asset-image").each(function(){
 				var banner = new BgImageView({el:this});
 			});
+
+			this.$el.find('a[href*=#]').click(function(e){     
+            	e.preventDefault();
+	            $('body').animate( {scrollTop: ($(this.hash).offset().top-33) + "px"} , 500);
+	        });
 		},
 		onclose:function(){
 		},

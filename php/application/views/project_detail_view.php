@@ -2,7 +2,7 @@
 	<div class="page-header-inner">
 		<div class="cfm-project-naviation cfm-navigation">
 			<ul>
-				<li><a href="<?php echo base_url().$parent_slug; ?>" data-navigate-to="<?php echo $parent_slug; ?>" ><span class="line-arrow-left line-arrow"></span><?php echo $parent_slug == "casestudies" ? 'Case Studies' : 'Projects'; ?></a></li>
+				<li><a href="<?php echo base_url().$parent_slug; ?>" data-navigate-to="<?php echo $parent_slug; ?>" ><span class="line-arrow-left line-arrow"></span><?php echo $parent_slug == "campaigns" ? 'Campaigns' : 'Projects'; ?></a></li>
 				<?php if( !empty($next) ) : ?>
 				<li class="next-button"><a href="<?php echo base_url(). $category_slug. '/' . $next; ?>" data-navigate-to="<?php echo $category_slug. '/' . $next; ?>" ><span class="line-arrow-right line-arrow"></span></a></li>
 				<?php endif; ?>
@@ -14,6 +14,13 @@
 	</div>
 </div>
 <div class="project-detail">
+	<div class="project-heading">
+		<div class="project-heading-inner">
+			<h2><?php echo $data->heading; ?></h2>
+			<h1><?php echo $data->subhead; ?></h1>
+			<?php if( count($assets) > 1): ?><div class="video-anchor-link"><a href="#<?php echo $data->slug; ?>-video"><span class="arrow"></span><span class="label">Watch Case Study</span></a></div><?php endif; ?>
+		</div>
+	</div>
 	<div class="featured-asset">
 		<div class="featured-asset-inner project-asset-inner">
 			<? $this->load->view( "asset/".$assets[0]->asset_type_name."_asset_view", array("asset"=>$assets[0]) ); ?>
@@ -24,7 +31,6 @@
 			<div class="project-asset-image project-logo" data-image="<?php echo $client_logo; ?>"></div>
 			<div class="project-description">
 				<div class="project-description-inner">
-					<h1><?php echo $data->heading; ?></h1>
 					<p><?php echo $data->description; ?></p>
 					<div class="project-links-menu">
 			            <div class="project-links-menu-inner">
@@ -38,7 +44,6 @@
 				</div>
             </div>
 		</div>
-		<?php if( !empty($assets) && count($assets) > 1 ): ?><hr><?php endif; ?>
 	</div>
 	
 	<div class="project-assets-container">

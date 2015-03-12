@@ -6,7 +6,7 @@
 	<div class="cfm-project-gallery">
 		<ul>
 			<?php foreach ($data as $key => $client): ?>
-			<li data-id="<?= $client->id; ?>" data-image="<?= base_url().'img/clients/'.$client->thumbnail_image.'.jpg'; ?>">
+			<li data-id="<?= $client->id; ?>" data-image="<?= base_url().'img/client_logos/grey/'.$client->thumbnail_image.'.jpg'; ?>">
 				<div class="project-inner">
 					<a class="cfm-project"></a>
 				</div>

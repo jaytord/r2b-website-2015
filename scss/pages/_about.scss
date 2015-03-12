@@ -5,44 +5,89 @@
  div#about-page{
  	padding:0;
 
- 	div.cfm-project-gallery.what-we-do{
-		padding:20px 20px;
+ 	div.section-header{
+ 		background-color:rgba(240,240,240,1);
 
-		@media( min-width:$tablet-small){
-			padding:40px 40px;
-		}
+ 		h2{
+ 			color:#555;
+	 	}
+ 	}
 
- 		ul{
-		    @media( min-width:$tablet-large){
-		    	@include prefix("column-count", 2);
-		    	@include prefix("column-gap", 10px);
-			}
+ 	div.services{
+		padding:0 0 80px 0;
+		// @media(min-width:$tablet-large){
+		//        		@include prefix("column-count", 2);
+		//     		@include prefix("column-gap", 10px);
+		//        	}
 
- 			li{
- 				-webkit-column-break-inside: avoid;
-         		page-break-inside: avoid;
-               	break-inside: avoid;	
+		div.services-section{
+			-webkit-column-break-inside: avoid;
+	 		page-break-inside: avoid;
+	       	break-inside: avoid;
+       		vertical-align: top;
+       		padding:60px 20px 20px 20px;
 
- 				width:100%;
- 				height: auto;
- 				vertical-align: top;
- 				padding-bottom:10px;
- 				float: none;
+       		@media(min-width:$tablet-small){
+       			padding:60px 40px 20px 40px;
+       		}
+       		
+       		@media(min-width:$tablet-large){
+       			padding:60px 80px 20px 80px;
+       		}
 
- 				div.project-inner{
-		 			padding:22px 20px 4px 20px;
-		 			border: 3px solid #eee;
-		 			
- 					a{
- 						padding-bottom:0;
- 						height: auto;
- 						background-color: transparent;
+       		h2{
+       			font-family: "gotham-light";
+       			padding:20px 0;
+       			font-size: 26px;
+       		}
 
-			 			h2{
-			 				font-family: "gotham-book";
-			 			}
-					}
-		 		}
+       		&:nth-child(even){
+       			border-top:1px solid #eee;
+       			border-bottom:1px solid #eee;
+
+       			h2{
+		    	}
+       		}
+
+	 		ul{
+	 			list-style: none;
+	 			padding:0; margin:10px 0 20px 0;
+
+		    	
+
+	 			li{
+	 				-webkit-column-break-inside: avoid;
+	         		page-break-inside: avoid;
+	               	break-inside: avoid;	
+
+	 				width:100%;
+	 				height: auto;
+	 				vertical-align: top;
+	 			}
+	 		}
+	 	}
+ 	}
+
+ 	div.cfm-project-gallery{
+ 		padding:10px;
+
+ 		@media(min-width:$tablet-small){
+   			padding:30px;
+   		}
+   		
+   		@media(min-width:$tablet-large){
+   			padding:60px;
+   		}
+
+ 		.project-inner{
+ 			padding:10px;
+
+ 			.project-label{
+ 				margin:20px 0 40px 0;
+
+ 				h2{
+ 					font-size: 20px;
+ 				}
  			}
  		}
  	}

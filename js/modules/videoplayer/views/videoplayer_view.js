@@ -3,31 +3,58 @@ define([
     'modules/videoplayer/views/videoplayer-controls_view'
 ], function( Backbone , VideoPlayerControlsView ){
     var VideoPlayerView = Backbone.View.extend({
+        hasplayed:false,
         initialize:function(options){
             var _t = this;
+
+            _t.id = _t.el.getAttribute("id");
 
             _t.poster                       = _t.$el.find( "div.cfm-videoplayer-poster" )[0];
             _t.video                        = _t.$el.find( "video.cfm-videoplayer-desktop" )[0];
             _t.mobile_video                 = _t.$el.find( "video.cfm-videoplayer-mobile" )[0];
 
-            _t.model          = new Backbone.Model( { ready:false } );
+            if(ipad == false && mobile == false){
+                _t.autoplay                     = _t.el.hasAttribute( "autoplay" );
+                _t.loop                         = _t.el.hasAttribute( "loop" );
+                _t.nocontrols                   = _t.el.hasAttribute( "nocontrols" );
+
+                if( _t.autoplay )   _t.$el.addClass( "autoplay" ); 
+                if( _t.loop )       _t.$el.addClass( "loop" ); 
+            }
+
+            _t.model                        = new Backbone.Model( { ready:false } );
 
             _t.model.on( "change:ready", function( _model ){
                 if( _model.get( "ready" ) == true ){
-                    if( !_t.$el.hasClass( "ready" ) )
-                        _t.$el.addClass( "ready" );
+                    if( !_t.$el.hasClass( "ready" ) ){
+                        _t.$el.addClass( "ready" ); 
+
+                        _t.onresize();
+
+                        if( mobile == false ){
+                            $(_t.poster).click( function(){
+                                _t.play();
+                            });
+
+                            if( _t.autoplay ) setTimeout( function(){ _t.play(); }, 1000 );
+                        } else {
+
+                        }
+                    }
                 } else {
                     _t.$el.removeClass( "ready" );
                 }
             });
 
-            window.addEventListener("resize", function(){
-                clearTimeout( _t.resizeTO );
+            if(mobile == false && ipad == false){
+                window.addEventListener("resize", function(){
+                    clearTimeout( _t.resizeTO );
 
-                _t.resizeTO = setTimeout( function(){
-                    _t.onresize();
-                }, 100 );
-            });
+                    _t.resizeTO = setTimeout( function(){
+                        _t.onresize();
+                    }, 100 );
+                });
+            }
         },
         onresize:function(){
             var _t = this;
@@ -51,18 +78,18 @@ define([
 
             if( mobile == false ){
                 this.video.play();
-                this.controls.toPlayingState();
+                this.toPlayingState();
             }
+
+            this.trigger("play");
         },
         pause:function(){
             if( mobile == true ){
                 this.mobile_video.pause();
             } else {
                 this.video.pause();
-                this.controls.toPausedState();
+                this.toPausedState();
             }
-
-
         },
         load:function( _url, _type, _poster ){
             var _t = this;
@@ -74,12 +101,12 @@ define([
                 if( _url ) $( _t.mobile_video ).attr( "src", _url );
 
                 $( _t.mobile_video ).on( "play", function(){
-                    $( _t.mobile_video ).css( "opacity",1 );
+                        _t.toPlayingState();
                 });
 
                 if( iphone ){
                     $( _t.mobile_video ).on( "pause", function(){
-                        $( _t.mobile_video ).css( "opacity",0 );
+                        _t.toPausedState();
                     });
                 }
             } else {
@@ -90,44 +117,94 @@ define([
 
                 $( _t.video ).on( "timeupdate", function() { //playing progress
                     var value = (100 / _t.video.duration) * _t.video.currentTime;
-                    _t.controls.ontimeupdate(value);
+                    if(_t.controls) _t.controls.ontimeupdate(value);
                 });
 
                 $( _t.video ).on( "progress", function() { 
                     if( _t.video.buffered.length > 0 ){
                         var value = (_t.video.buffered.end(0)/_t.video.duration)*100;
-                        _t.controls.onprogress(value);
+                        if(_t.controls) _t.controls.onprogress(value);
                     }
                 });
 
                 $( _t.video ).on( "play", function() { 
-                    _t.controls.toPlayingState();
-                    $( _t.poster ).fadeOut( 400 );
+                    _t.toPlayingState();
                 });
 
                 $( _t.video ).on( "playing", function() { 
-                    _t.controls.toPlayingState();
+                    _t.toPlayingState();
                 });
 
                 $( _t.video ).on( "pause", function() { 
-                    _t.controls.toPausedState();
-                    $( _t.poster ).fadeIn( 400 );
+                    _t.toPausedState();
+                });
+
+                $( _t.video ).mousedown(function() {
+                    if( _t.hasplayed ){
+                        if( _t.playing ){
+                            _t.pause();
+                        } else {
+                            _t.play();
+                        }
+                    }
                 });
 
                  $( _t.video ).on( "ended", function() {
                     _t.video.currentTime = 0;
-                    _t.controls.ontimeupdate(0);
-                    _t.controls.toPausedState();
+                    if(_t.controls) _t.controls.ontimeupdate(0);
 
-                    $( _t.poster ).fadeIn( 400 );
+                    if(_t.loop){  
+                        _t.play();                  
+                    } else {
+                        _t.toPausedState();
+                    }
                 });
 
-                _t.controls = new VideoPlayerControlsView({ el: _t.$el.find( "div.cfm-video-controls" )[0], video_el:_t.video });
+                if(!_t.nocontrols) _t.controls = new VideoPlayerControlsView({ el: _t.$el.find( "div.cfm-video-controls" )[0], video_el:_t.video });
 
                 _t.onresize();
             }
 
             if( _poster ) _t.loadposter( _poster );
+        },
+        reset:function(){
+            var _t = this;
+
+            if(this.playing){
+                _t.video.pause();
+                _t.video.currentTime = 0;
+                if(_t.controls) _t.controls.ontimeupdate(0);
+
+                // _t.video.currentTime = 0;
+                // if(_t.controls) _t.controls.ontimeupdate(0);
+
+                // setTimeout(function(){
+                //     _t.autoplay         = false;
+                //     _t.loop             = false;
+                //     _t.nocontrols       = false;
+
+                //     _t.$el.removeClass("loop");
+                //     _t.$el.removeClass("autoplay");
+                //     _t.$el.removeClass("nocontrols");
+                //     _t.$el.removeClass("paused");
+                // },500);
+            }
+        },
+        toPausedState:function(){
+            this.playing = false;
+            this.$el.removeClass("playing");
+            if( !this.$el.hasClass("paused") )  this.$el.addClass("paused");
+            if(this.controls) this.controls.toPausedState();
+        },
+        toPlayingState:function(){
+            this.hasplayed = true;
+
+            this.onresize();
+            
+            this.playing = true;
+            this.$el.removeClass("paused");
+            if( !this.$el.hasClass("playing") )  this.$el.addClass("playing");
+            if(this.controls) this.controls.toPlayingState();
         },
         loadposter:function( _url ){
             var _t = this, img = new Image();
@@ -136,10 +213,6 @@ define([
                 $( _t.poster ).attr( "style", "background-image:url(" + _url + ")" );
 
                 _t.model.set( "ready", true );
-
-                $(_t.poster).click( function(){
-                    _t.play();
-                });
             }   
 
             img.src = _url;
