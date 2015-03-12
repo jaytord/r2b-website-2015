@@ -7,7 +7,7 @@
 #
 # Host: localhost (MySQL 5.6.22)
 # Database: r2b
-# Generation Time: 2015-03-12 20:31:12 +0000
+# Generation Time: 2015-03-12 21:18:16 +0000
 # ************************************************************
 
 
@@ -98,7 +98,6 @@ VALUES
 	(56,2,NULL,NULL,NULL,NULL,NULL),
 	(57,2,NULL,NULL,NULL,NULL,NULL),
 	(58,2,NULL,NULL,NULL,NULL,NULL),
-	(59,2,NULL,NULL,NULL,NULL,NULL),
 	(60,2,NULL,NULL,NULL,NULL,NULL);
 
 /*!40000 ALTER TABLE `assets` ENABLE KEYS */;
@@ -151,7 +150,6 @@ VALUES
 	(56,56),
 	(57,57),
 	(58,58),
-	(59,59),
 	(60,60);
 
 /*!40000 ALTER TABLE `assets_media_lu` ENABLE KEYS */;
@@ -325,17 +323,17 @@ VALUES
 	(45,NULL,NULL,'Verizon_header',1),
 	(46,NULL,NULL,'Zyrtec',1),
 	(47,NULL,NULL,'att2_header',1),
-	(48,NULL,NULL,'lymphoma-research_video',2),
-	(49,NULL,NULL,'wisteria_video',2),
-	(50,NULL,NULL,'dvf_video',2),
-	(51,NULL,NULL,'teen-vogue_video',2),
-	(52,NULL,NULL,'the-limited_video',2),
-	(53,NULL,NULL,'john-frieda_video',2),
-	(54,NULL,NULL,'gawker_video',2),
-	(55,NULL,NULL,'american-express_video',2),
-	(56,NULL,NULL,'loreal-multiscreen_video',2),
-	(57,NULL,NULL,'maybelline_video',2),
-	(58,NULL,NULL,'seventh-generation_video',2),
+	(48,NULL,NULL,'LRF_Fundraising_Lymphoma',2),
+	(49,NULL,NULL,'Wisteria_Kiss',2),
+	(50,NULL,NULL,'dvf_01',2),
+	(51,NULL,NULL,'TeenVogue_3stepsto_Season1_Trailer_071913_IPTV_Texted_422_Master',2),
+	(52,NULL,NULL,'Limited_01',2),
+	(53,NULL,NULL,'Frizzease_60',2),
+	(54,NULL,NULL,'CS_INTEL_GAWKER_V2_small',2),
+	(55,NULL,NULL,'AMEX_EDIT_ALT_0913c',2),
+	(56,NULL,NULL,'loreal_multiscreen',2),
+	(57,NULL,NULL,'maybelline_multiscreen',2),
+	(58,NULL,NULL,'seventhgenV5',2),
 	(59,NULL,NULL,'giorgio-armani_video',2),
 	(60,NULL,NULL,'Movado_ThinClassic',2);
 
@@ -380,8 +378,8 @@ CREATE TABLE `projects` (
   `heading` varchar(200) DEFAULT NULL,
   `subhead` varchar(200) DEFAULT NULL,
   `blurb` varchar(500) DEFAULT NULL,
-  `description` varchar(4000) DEFAULT NULL,
-  `thumbnail_image` varchar(50) DEFAULT NULL,
+  `description` text,
+  `thumbnail_image` varchar(100) DEFAULT NULL,
   `client_logo` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -404,19 +402,18 @@ VALUES
 	(17,17,'chaps-banners','Chaps','Chaps Banners',NULL,NULL,NULL,'chaps','chaps'),
 	(28,28,'h-m','H&M','H&M Website',NULL,NULL,NULL,'h_m','h-m'),
 	(35,35,'uniqlo','Uniqlo','Uniqlo Gifbox',NULL,NULL,NULL,'uniqlo','uniqlo'),
-	(39,NULL,'lymphoma-research',NULL,NULL,NULL,NULL,NULL,'lymphoma_research',NULL),
-	(40,NULL,'wisteria',NULL,NULL,NULL,NULL,NULL,'wisteria',NULL),
-	(41,NULL,'dvf',NULL,NULL,NULL,NULL,NULL,'dvf',NULL),
-	(42,NULL,'teen-vogue',NULL,NULL,NULL,NULL,NULL,'teen_vogue',NULL),
-	(43,NULL,'the-limited',NULL,NULL,NULL,NULL,NULL,'the_limited',NULL),
-	(44,NULL,'john-frieda',NULL,NULL,NULL,NULL,NULL,'john_frieda',NULL),
-	(45,NULL,'gawker',NULL,NULL,NULL,NULL,NULL,'gawker',NULL),
-	(46,NULL,'american-express',NULL,NULL,NULL,NULL,NULL,'american_express',NULL),
-	(47,NULL,'loreal-multiscreen',NULL,NULL,NULL,NULL,NULL,'loreal_multiscreen',NULL),
-	(48,NULL,'maybelline',NULL,NULL,NULL,NULL,NULL,'maybelline',NULL),
-	(49,NULL,'seventh-generation',NULL,NULL,NULL,NULL,NULL,'seventh_generation',NULL),
-	(50,NULL,'giorgio-armani',NULL,NULL,NULL,NULL,NULL,'giorgio_armani',NULL),
-	(51,NULL,'movado','Movado','Movado',' Thin Classic',NULL,'Movado Thin Classic is a design and animation collaboration between Click 3X and TAG Creative. Click 3X translated TAG\'s creative direction into a striking design sequence and stunning 3D animation.</p><p>Our CGI team carefully modeled the watch to represent Movado\'s favorite product photography. We animated the object in a choreographed narrative of key product features and gravity defying movement. Our CG pipeline allowed for direction and control far beyond what would have been possible with photography. Compositors layered reflections and visual effects to finish a fluid and consistent story.</p><p>Thin Classic is the beautiful result of working closely with a client to express our common creative vision.','Movado_ThinClassic',NULL);
+	(39,NULL,'lymphoma-research','Lymphoma Research Foundation','Impact','Lymphoma Research Foundation',NULL,'Did you know that every 7 minutes someone in the Unites States is diagnosed with Lymphoma? We did not, but used it as inspiration in creating a series of awareness videos for the Lymphoma Research Foundation. Working closely with LRF we produced an informational Fundraising Video which premiered at the foundation’s annual Gala in NYC.','LRF_Fundraising_Lymphoma','lymphoma-research'),
+	(40,NULL,'wisteria','Wisteria Hysteria','Wisteria Hysteria','Atlantic Pictures with Director Henry Pincus',NULL,'Stephen Jones launches his seductive new scent, Wisteria Hysteria, with a striking filmdirected by Henry Pincus and edited by Jamie Harley. The work is set is a world that is both rococo and futuristic, and depicts a woman discovering a new side of herself, all while clad in L\'Wren Scott and Stephen Jones, of course. The deliberate contradictions of the scent - clean but sensual, familiar yet strange - are reflected in the protagonists complex new side, which is both light and dark, and positive and negative. The work is accompanied by music by Haxan Cloak.','Wisteria_Kiss','wisteria'),
+	(41,NULL,'dvf','Diane Von Furstenberg','','Diane Von Furstenberg',NULL,'Jonathan Yi was the cinematographer for this video for DVF.','dvf_01','dvf'),
+	(42,NULL,'teen-vogue','Teen Vogue','Teen Vogue: 3 Steps to... Official Trailer','Conde Nast',NULL,'Check out new Teen Vogue series 3 Steps to…, where beauty and health director Elaine Welteroth teams up with top industry pros to break down the newest hair, makeup, nail, and skincare tricks to try right now. The hottest trends made easy in—you guessed it—just three steps. Jonathan Yi shot and directed 28 episodes of the series set to launch August 15. Edited by Jeremy Baumann.','TeenVogue_3stepsto_Season1_Trailer_071913_IPTV_Texted_422_Master',NULL),
+	(43,NULL,'the-limited','The Limited','The Limited','DBA',NULL,'<strong>Challenge:</strong>\nRaison D\'Être & ClickFire Media were challenged to create a Facebook app for DBA and their client, The Limited.\n</p><p><strong>Execution:</strong>\nUsing the Instagram API, CFM built a photo gallery Facebook app. The app automatically included any Instagram photo with The Limited\'s designated campaign hashtag, #ColorYourWorld. Each photo with the #ColorYourWorld hashtag was automatically entered into a photo contest. The photo with the most likes and shares wins.','Limited_01',NULL),
+	(44,NULL,'john-frieda','John Frieda','John Frieda Frizz-Ease','DigitasLBi Chicago',NULL,'Neumann’s first project with Click 3X and collaboration with Whiskytree, in partnership with Digitas Chicago, is a film for the re-launch of John Frieda Frizz-Ease, that utilized Click 3X’s integrated production process from directing to post-production. The focus of the film is on the overall brand attitude vs. the product itself, showcasing women who are self assured, confident and go after what they want. This piece introduces the concept of real women looking their best and never having to \'pull back\' from life, thanks to Frizz Ease. The entire project showcased Click 3X’s holistic way of working, as both Neumann and the post-production team were involved from the beginning, leading to his and the agency\'s vision being brought to the screen as a united team.','Frizzease_60',NULL),
+	(45,NULL,'gawker','Gawker','','Gawker Intel',NULL,'To get the word out about the new, sleek UltraBooks, Jonathan collaborated with Gawker Media for this co-branded promotion with the Gawker Media Gizmodo Shooting Challenge editorial series and Intel. The campaign sent six celebrated photographers to cities around the globe to create a compelling portfolio based on a one-word theme and a specific technical photography challenge, while Yi filmed their journey. Former pro skier Scott Rinckenberger captured mountain biking and surfing in Costa Rica for the theme “sports” and the challenge “solarization”, while Ryan Russell set out to capture “competition” in the video-gaming culture in a San Francisco arcade. Douglas Sonders captured the style of Miami with a photoshoot using some of the most high profile luxury cars in the world, including a gold Lamborghini for his challenge of shooting cars. Steven Taylor, Taylor Davidson, and Diana Levine used everything from black and white cameras to iPhones to get the perfect shots in Paris, Boston and Austin covering themes of style, sports and music. We also handled the editorial, graphics, compositing, and color correct work.','CS_INTEL_GAWKER_V2_small',NULL),
+	(46,NULL,'american-express','American Express','','American Express',NULL,'This spot was directed and designed by Juan Delcan, with all creative execution done by the Click3x team.','AMEX_EDIT_ALT_0913c',NULL),
+	(47,NULL,'loreal-multiscreen','L\'OREAL','L\'OREAL','Multi-Screen',NULL,NULL,'loreal_multiscreen',NULL),
+	(48,NULL,'maybelline','Maybelline','Maybelline','Multi-Screen',NULL,NULL,'maybelline_multiscreen',NULL),
+	(49,NULL,'seventh-generation','Seventh Generation','Seventh Generation','Application',NULL,'<strong>Challenge:</strong>\nSeventh Generation challenged ClickFire Media to create an interactive Facebook app centered around this statement, \"I\'m in it because . . . \"\n</p><p><strong>Execution:</strong>\nCFM created an interactive, flash-based Facebook application, which encouraged Seventh Generation’s fans to fill in this statement, “I’m in it because. . . “ Fans could either choose from a list of reasons (such as I’m in it for my family, the planet, etc.) or type in their own special reason. Then, they were encouraged to upload a photo, either through Facebook or their computer, to display with their message. Each of the messages were randomly displayed in interactive mosaic. Each week, there were also weekly giveaways based on users’ submissions. Results: Produced and executive a Facebook app on time and on budget 1,800+ active users in the first week.','seventhgenV5',NULL),
+	(51,NULL,'movado','Movado','Movado','Thin Classic',NULL,'Movado Thin Classic is a design and animation collaboration between Click 3X and TAG Creative. Click 3X translated TAG\'s creative direction into a striking design sequence and stunning 3D animation.</p><p>Our CGI team carefully modeled the watch to represent Movado\'s favorite product photography. We animated the object in a choreographed narrative of key product features and gravity defying movement. Our CG pipeline allowed for direction and control far beyond what would have been possible with photography. Compositors layered reflections and visual effects to finish a fluid and consistent story.</p><p>Thin Classic is the beautiful result of working closely with a client to express our common creative vision.','Movado_ThinClassic',NULL);
 
 /*!40000 ALTER TABLE `projects` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -470,7 +467,6 @@ VALUES
 	(56,47,56),
 	(57,48,57),
 	(58,49,58),
-	(59,50,59),
 	(60,51,60);
 
 /*!40000 ALTER TABLE `projects_asset_lu` ENABLE KEYS */;
@@ -516,7 +512,6 @@ VALUES
 	(47,1),
 	(48,1),
 	(49,1),
-	(50,1),
 	(51,1);
 
 /*!40000 ALTER TABLE `projects_category_lu` ENABLE KEYS */;
