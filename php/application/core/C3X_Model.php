@@ -81,9 +81,9 @@ class C3X_Model extends CI_Model
 		return $this->db->affected_rows();
 	}
 
-	function delete($pId)
+	function delete($options)
 	{
-		$this->db->delete($this->table, array($this->pk => $pId)); 	
+		$this->db->delete( $this->table, $options ); 	
 		
 		return $this->db->affected_rows();
 	}

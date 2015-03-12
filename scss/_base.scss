@@ -334,7 +334,7 @@ div.cfm-project-gallery{
 				padding:0;
 
  				a{
- 					background-size:100.5%;
+ 					background-size:cover;
  					background-color: #FFF;
 
  					@include prefix( "transition", background .25s ease-in-out );

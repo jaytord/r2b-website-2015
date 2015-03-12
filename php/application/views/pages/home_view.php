@@ -32,7 +32,7 @@
 			<li id="p2">
 				<div class="project-inner">
 					<a href="<?= base_url(); ?>campaigns" data-navigate-to="campaigns">
-						<div class="project-label"><div class="project-label-inner"><h3>CASE STUDIES</h3></div></div>
+						<div class="project-label"><div class="project-label-inner"><h3>CAMPAIGNS</h3></div></div>
 					</a>
 				</div>
 			</li>
