@@ -32,7 +32,7 @@ class Projects_Model extends C3X_Model
 
         //get media
         foreach ($assets as $key => $asset) {
-            $query = $this->db->query("SELECT media_id,media_type_name,filename,title FROM assets_media_lu LEFT JOIN media ON assets_media_lu.media_id=media.id LEFT JOIN media_types ON media.media_type_id=media_types.id WHERE asset_id='".$asset->asset_id."' ORDER BY media_id");
+            $query = $this->db->query("SELECT media_id,media_type_name,filename,title,href FROM assets_media_lu LEFT JOIN media ON assets_media_lu.media_id=media.id LEFT JOIN media_types ON media.media_type_id=media_types.id WHERE asset_id='".$asset->asset_id."' ORDER BY media_id");
             $asset->media = $query->result();
         }
 
