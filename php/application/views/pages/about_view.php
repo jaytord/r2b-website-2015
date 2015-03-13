@@ -12,7 +12,7 @@
 		<div class="services-section">
 			<h2>Digital Marketing</h2>
 			<ul>
-				<li>Marketing across the paid, owned and earned landscape, online and offline, is no easy feat. Consider us your special ops digital team, focused on marrying your marketing efforts with focused digital marketing and media strategies. Our goal? Ensuring you have a tailored, integrated presence, where and when you should be, with impactful messaging and creative built to love across platforms.</li>
+				<li>Marketing across the paid, owned and earned landscape, online and offline, is no easy feat. Consider us your special ops digital team, focused on marrying your marketing efforts with focused digital marketing and media strategies. Our goal? Ensuring you have a tailored, integrated presence, where and when you should be, with impactful messaging and creative built to live across platforms.</li>
 			</ul>
 		</div>
  		<div class="services-section">
@@ -45,7 +45,7 @@
 			</li>
 			<li id="heather" data-image="<?= base_url(); ?>img/heather.jpg">
 				<div class="project-inner">
-					<a class="cfm-project"></a><div class="project-label"><div class="project-label-inner"><h2>Heather Bergstein</h2><h3>Director of Strategy</h3></div></div>
+					<a class="cfm-project"></a><div class="project-label"><div class="project-label-inner"><h2>Heather Bergstein</h2><h3>Director, Digital Strategy</h3></div></div>
 				</div>
 			</li>
 		</ul>
