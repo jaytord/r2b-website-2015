@@ -275,7 +275,7 @@ a:hover{
 
 #footer-container{
 	border-top: 4px solid #EEE;
- 	padding:90px 0 80px 0;
+ 	padding:90px 20px 80px 20px;
  	text-align: center;
  	position: relative;
  	color:#666;
@@ -305,16 +305,24 @@ a:hover{
 
 div.section-header{
 	background-color:#FFF;
-	border-bottom:4px solid #EEE;
 
 	h2{
 		text-transform: uppercase;
-		font-family: "gotham-bold";
+		font-family: "gotham-light";
 		font-size: 19px;
 		line-height: 24px;
 		color: #CCC;
-		padding:40px 0 40px 0;
 		text-align: center;
+
+		padding:30px 20px 30px 20px;
+
+		@media( min-width:$tablet-small){ 
+			padding:40px 60px 40px 60px;
+		}
+
+		@media( min-width:$desktop){ 
+			padding:40px 80px 40px 80px;
+		}
 	}
 }
 
