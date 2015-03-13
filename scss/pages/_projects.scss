@@ -6,8 +6,6 @@
 	.cfm-project-gallery{
 		ul{
 	 		li{
- 				@media( min-width:$desktop-large){ width:25%; }
-
 				div.project-inner{
 		 			a.cfm-project{
 		 				.project-label{
