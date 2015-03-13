@@ -64,7 +64,7 @@
 	<div id="reel-video" class="section-header">
 		<h2>2015 MONTAGE</h2>
 	</div>
-	<div id="reel-videoplayer" class="cfm-videoplayer" data-video-name="http://media.click3x.com/video/r2b_reel_01" data-poster="<?= base_url(); ?>img/assets/video_posters/montage_poster.jpg">
+	<div id="reel-videoplayer" class="cfm-videoplayer" data-video-name="<?= base_url(); ?>video/r2b_reel_01" data-poster="<?= base_url(); ?>img/assets/video_posters/montage_poster.jpg">
 	    <div class="cfm-videoplayer-inner">
             <video class="cfm-videoplayer-mobile" width="960" height="540" controls></video>
             <div class="cfm-videoplayer-poster">
