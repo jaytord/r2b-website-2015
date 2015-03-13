@@ -68,28 +68,28 @@
                     <ul>
                         <li id="p1" class="facebook-btn">
                             <div class="project-inner">
-                                <a target="_blank" href="https://www.facebook.com/Click3X">
+                                <a target="_blank" href="https://www.facebook.com/reason2beNYC">
                                     <div class="project-label"><div class="project-label-inner"></div></div>
                                 </a>
                             </div>
                         </li>
                         <li id="p2" class="twitter-btn">
                             <div class="project-inner">
-                                <a target="_blank" href="https://twitter.com/click3x">
+                                <a target="_blank" href="https://twitter.com/Raisondetrenyc">
                                     <div class="project-label"><div class="project-label-inner"></div></div>
                                 </a>
                             </div>
                         </li>
                         <li id="p3" class="instagram-btn">
                             <div class="project-inner">
-                                <a target="_blank" href="https://instagram.com/click_3x">
+                                <a target="_blank" href="https://instagram.com/reason2be/">
                                     <div class="project-label"><div class="project-label-inner"></div></div>
                                 </a>
                             </div>
                         </li>
                     </ul>
                 </div>
-                <p>212.627.1900<br />16 W 22nd Street, New York, NY 10010, 4th Floor<br /><a href="mailto:info@reason2be.com">info@reason2be.com</a></p>
+                <p>212.627.6644<br />16 W 22nd Street 4th Floor, New York, NY 10010<br /><a href="mailto:info@reason2be.com">info@reason2be.com</a></p>
                 <div id="mobile-menu" class="cfm-navigation mobile-menu">
                     <div class="mobile-menu-inner">
                         <ul>

@@ -188,14 +188,14 @@ a:hover{
 	padding-top:54px;
 	background-color:#FFF;
 
-	.page-header-navigation{
+	.page-header-navigation, .page-footer-navigation{
 		background-color: rgba(240,240,240,1);
 
-		.page-header-inner{
-			padding:8px 20px 6px 20px;
+		.page-header-inner, .page-footer-inner{
+			padding:12px 20px 6px 20px;
 			
 			@media( min-width:$tablet-small){
-				padding:10px 40px 10px 40px;
+				padding:14px 40px 10px 40px;
 			}
 
 			.cfm-project-naviation{
@@ -210,7 +210,7 @@ a:hover{
 							font-size: 15px;
 							font-family: "gotham-light";
 							text-decoration:none;
-							color:#999;
+							color:#AAA;
 							border:none !important;
 
 							&:hover{
@@ -305,6 +305,7 @@ a:hover{
 
 div.section-header{
 	background-color:#FFF;
+	border-bottom:4px solid #EEE;
 
 	h2{
 		text-transform: uppercase;

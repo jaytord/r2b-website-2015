@@ -40,12 +40,12 @@
 			</li>
 			<li id="jessica" data-image="<?= base_url(); ?>img/jessica.jpg">
 				<div class="project-inner">
-					<a class="cfm-project"></a><div class="project-label"><div class="project-label-inner"><h2>Jessica de Guardiola</h2><h3>Executive Producer</h3></div></div>
+					<a class="cfm-project"></a><div class="project-label"><div class="project-label-inner"><h2>Jessica Adams de Guardiola</h2><h3>Partner, Strategic Communications</h3></div></div>
 				</div>
 			</li>
 			<li id="heather" data-image="<?= base_url(); ?>img/heather.jpg">
 				<div class="project-inner">
-					<a class="cfm-project"></a><div class="project-label"><div class="project-label-inner"><h2>Heather</h2><h3>Creative Director</h3></div></div>
+					<a class="cfm-project"></a><div class="project-label"><div class="project-label-inner"><h2>Heather Bergstein</h2><h3>Director of Strategy</h3></div></div>
 				</div>
 			</li>
 		</ul>

@@ -1,5 +1,5 @@
 <div id="home-page" class="page-content-inner">
-	<div id="reel-video" class="cfm-videoplayer" data-video-name="video/2015_R2B_WebTeaser" data-poster="<?= base_url(); ?>img/assets/video_posters/reel_poster.jpg">
+	<div id="reel-video" class="cfm-videoplayer" loop data-video-name="video/2015_R2B_WebTeaser" data-poster="<?= base_url(); ?>img/assets/video_posters/reel_poster.jpg">
 	    <div class="cfm-videoplayer-inner">
             <video class="cfm-videoplayer-mobile" width="960" height="540" controls></video>
             <div class="cfm-videoplayer-poster">
@@ -58,5 +58,28 @@
 				</div>
 			</li>
 		</ul>
+	</div>
+	<div id="reel-video" class="section-header">
+		<h2>2015 MONTAGE</h2>
+	</div>
+	<div id="reel-videoplayer" class="cfm-videoplayer" data-video-name="http://media.click3x.com/video/r2b_reel_01" data-poster="<?= base_url(); ?>img/assets/video_posters/r2b_reel_01.jpg">
+	    <div class="cfm-videoplayer-inner">
+            <video class="cfm-videoplayer-mobile" width="960" height="540" controls></video>
+            <div class="cfm-videoplayer-poster">
+            	<div class="cfm-videoplayer-poster-header">
+            		<div class="cfm-videoplayer-poster-header-inner">
+				  		<div class="cfm-videoplayer-playbutton"><span class="arrow"></span></div>
+					</div>
+				</div>
+            </div>
+            <video class="cfm-videoplayer-desktop" width="960" height="540"></video>
+            <div class="cfm-video-controls">
+            	<ul>
+					<li class="cfm-video-play-pause-btn cfm-video-btn"></li>
+					<li class="cfm-video-fullscreen-btn cfm-video-btn"></li>
+					<li class="cfm-video-mute-btn cfm-video-btn"></li>
+				</ul><div class="cfm-video-progress-container"><a class="cfm-video-seek-bar"></a><input class="cfm-video-seek-bar-input" type="range" value="0"></div>
+			</div>
+	    </div>
 	</div>
 </div>

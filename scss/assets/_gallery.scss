@@ -1,30 +1,63 @@
 .project-asset{
-	&.gallery{
-		width: 100%;
-		max-width: 1000px;
-		margin:0 auto;
+	.project-asset-inner{padding:10px;}
 
-		.project-asset-inner{
-			@media(min-width:$tablet-small){
-				padding:40px 0 40px 0;
-			}
-		}
-
-		.asset-gallery{
-			ul{
-				list-style: none; padding:0; margin:0; 
-				@include clearfix;
-			}
-			li{
-				width: 100%;
-				float: left;
-				padding-bottom:100%;
-
-				@media(min-width:$tablet-small){
-					width: 50%;
-					padding-bottom:50%;
-				}
-			}
+	.project-asset-description{
+		.project-asset-description-inner{
 		}
 	}
+
+ 	div.cfm-project-gallery{
+ 		padding:0 0px;
+
+		@media(min-width:$tablet-small){
+			padding:0 20px;
+		}
+
+		ul{
+	 		li{
+				div.project-inner{
+					padding:10px;
+
+		 			a{
+		 				div.project-label{
+		 					transform: scale(1) !important;
+		 					background:transparent;
+		 					
+		 					div.project-label-inner{
+		 						background:#FFF;
+		 						position: absolute;
+		 						display: block;
+		 						top:20px; left:20px;
+		 						padding:10px 20px;
+
+		 						h2{
+		 							font-family: "gotham-bold";
+		 							font-size: 12px;
+		 						}
+		 					}
+		 				}
+
+		 				&:hover{
+		 					div.project-label{
+			 					div.project-label-inner{
+			 					}
+			 				}
+		 				}
+	 				}	
+
+	 				&.hidelabel{
+	 					a{
+	 						cursor: default;
+
+	 						div.project-label{
+	 							div.project-label-inner{
+	 								display: none;
+	 							}
+	 						}
+	 					}
+	 				}
+	 			}
+	 		}
+	 	}
+	 }
 }
