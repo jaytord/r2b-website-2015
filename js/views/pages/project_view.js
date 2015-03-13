@@ -19,6 +19,8 @@ define([
 		loadprojectdetails:function(){
 			var _t = this;
 
+			ga( 'send', 'pageview', _t.model.get("detailslug") );
+
 			$.ajax(
 		    {
 		        url: base_url + "template/" + _t.id + "/" + _t.model.get("detailslug"),
@@ -64,6 +66,8 @@ define([
             	e.preventDefault();
 	            $('body').animate( {scrollTop: ($(this.hash).offset().top-33) + "px"} , 500);
 	        });
+
+	        this.buildprojectgalleries();
 		},
 		onclose:function(){
 		},

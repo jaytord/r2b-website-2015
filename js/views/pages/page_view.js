@@ -38,8 +38,6 @@ define([
 			this.ready();
 		},
 		ready:function(){
-			this.buildprojectgalleries();
-
 			this.$el.find("a[data-navigate-to]").click(function(e){
 				e.preventDefault();
 				router.navigate( this.getAttribute("data-navigate-to"),true );
@@ -71,8 +69,10 @@ define([
 
 				_t.project_galleries.push( project_gallery );
 			});
+
+			console.log("build galleries complete");
 		},
-		onready:function(){/*overridden*/},
+		onready:function(){},
 		onready:function(){/*overridden*/},
 		close:function(){
 			this.onclose();

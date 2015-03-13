@@ -9,6 +9,7 @@ define([
 		onready:function(){
 			var _t = this;
 			_t.initGoogleMap();
+			this.buildprojectgalleries();
 		},
 		googleready:function(){
 			console.log("google ready");

@@ -7,7 +7,7 @@ define([
 		template: _.template( Template ),
 		id:"about",
 		onready:function(){
-			var _t = this;
+			this.buildprojectgalleries();
 		},
 		onclose:function(){
 		},

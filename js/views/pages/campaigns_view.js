@@ -6,6 +6,7 @@ define([
 		template: _.template( Template ),
 		id:"campaigns",
 		onready:function(){
+			this.buildprojectgalleries();
 		},
 		onclose:function(){
 		},

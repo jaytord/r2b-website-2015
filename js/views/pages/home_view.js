@@ -21,6 +21,8 @@ define([
 
 				_t.videos.push(video);
 			});
+
+			this.buildprojectgalleries();
 		},
 		resetothervideos:function(_id){
 			$.each(this.videos,function(i,v){
