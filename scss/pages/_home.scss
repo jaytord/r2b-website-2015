@@ -105,7 +105,7 @@
 
  	div.cfm-project-gallery{
  		padding:0 0 0 0;
- 		margin:2px -1px 0 0;
+ 		margin:1px -1px 0 0;
 
 		ul{
 	 		li{
@@ -116,34 +116,36 @@
 		 				box-sizing:border-box;
 		 				background-color:#111;
 		 				padding-bottom: 20%;
-		 				border-right:2px solid #EEE;
- 						border-bottom:2px solid #FFF;
+		 				border-right:1px solid #EEE;
+ 						border-bottom:1px solid #FFF;
 
 		 				div.project-label{
 		 					opacity: 1;
 		 					background-color:transparent;
+		 					@include prefix( "transform", scale(1) );
 
 		 					div.project-label-inner{
 		 						padding:0;
 		 						background-color:transparent;
 		 						border:none;
+		 						@include prefix( "transform", scale(1) );
 
 		 						h3{
 		 							font-family: "gotham-light";
-		 							color:#CCC;
-		 							letter-spacing: -.02em;
-		 							font-size:14px;
+		 							color:#BBB;
+		 							letter-spacing: -.01em;
+		 							font-size:16px;
 
 		 							@media( min-width:$tablet-large){ 
-										font-size:12px;
-		 							}
-
-		 							@media( min-width:900px){ 
 										font-size:14px;
 		 							}
 
-		 							@media( min-width:$desktop){ 
+		 							@media( min-width:900px){ 
 										font-size:16px;
+		 							}
+
+		 							@media( min-width:$desktop){ 
+										font-size:18px;
 		 							}
 		 						}
 		 					}
@@ -154,7 +156,7 @@
 		 						background-color:#fff;
 
 			 					div.project-label-inner{
-			 						h3{color:#444;}
+			 						h3{color:#333;}
 			 					}
 			 				}
 		 				}
