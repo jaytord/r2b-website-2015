@@ -17,7 +17,7 @@
 
 $config['base_url']	= '';
 $config['root_directory'] = '';
-$config['ga_account'] = 'XXXXXXXX';
+$config['ga_account'] = 'UA-3675967-12';
 $config['debug'] = false;
 
 /*
