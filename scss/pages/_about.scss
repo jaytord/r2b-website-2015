@@ -15,10 +15,6 @@
 
  	div.services{
 		padding:0 0 80px 0;
-		// @media(min-width:$tablet-large){
-		//        		@include prefix("column-count", 2);
-		//     		@include prefix("column-gap", 10px);
-		//        	}
 
 		div.services-section{
 			-webkit-column-break-inside: avoid;
@@ -81,6 +77,10 @@
 
  		.project-inner{
  			padding:10px;
+
+ 			a{
+ 				cursor: default;
+ 			}
 
  			.project-label{
  				margin:20px 0 40px 0;
