@@ -3,6 +3,7 @@
 	width:100%;
 	position: relative;
 	overflow:hidden;
+	background-color:rgba(240,240,240,1);
 
 	.cfm-videoplayer-inner{
 		padding-bottom: 100%;
@@ -22,6 +23,7 @@
 
 	video.cfm-videoplayer-desktop{
 		z-index: 0;
+		opacity: 0;
 	}
 	
 	.cfm-videoplayer-poster{
@@ -196,6 +198,10 @@
 	}
 
 	&.playing{
+		video{
+			opacity: 1;
+		}
+
 		.cfm-videoplayer-poster{
 			opacity: 0;
 			z-index:-1;

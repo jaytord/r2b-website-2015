@@ -7,6 +7,7 @@ define([
 	var ProjectView = PageView.extend({
 		template: _.template( Template ),
 		videos:[],
+		banners:[],
 		onready:function(){
 			this.details_container_el = this.$el.find("#project-details-container").eq(0);
 
@@ -59,7 +60,7 @@ define([
 
 			//build banner asset images
 			this.$el.find(".project-asset-image").each(function(){
-				var banner = new BgImageView({el:this});
+				_t.banners.push( new BgImageView({ el:this }) );
 			});
 
 			this.$el.find('a[href*=#]').click(function(e){     
@@ -70,6 +71,9 @@ define([
 	        this.buildprojectgalleries();
 		},
 		onclose:function(){
+			$.each(this.banners,function(){
+				this.remove();
+			})
 		},
 	});
 	return ProjectView;

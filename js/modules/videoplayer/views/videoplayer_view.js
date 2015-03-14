@@ -1,7 +1,8 @@
 define([
 	'backbone',
-    'modules/videoplayer/views/videoplayer-controls_view'
-], function( Backbone , VideoPlayerControlsView ){
+    'modules/videoplayer/views/videoplayer-controls_view',
+    'modules/bg_image_view'
+], function( Backbone , VideoPlayerControlsView , BgImageView){
     var VideoPlayerView = Backbone.View.extend({
         hasplayed:false,
         initialize:function(options){
@@ -207,15 +208,12 @@ define([
             if(this.controls) this.controls.toPlayingState();
         },
         loadposter:function( _url ){
-            var _t = this, img = new Image();
+            var _t = this;
 
-            img.onload = function(){
-                $( _t.poster ).attr( "style", "background-image:url(" + _url + ")" );
-
+            _t.posterimage = new BgImageView({ el:_t.poster, image_url:_url });
+            _t.posterimage.on("ready",function(){
                 _t.model.set( "ready", true );
-            }   
-
-            img.src = _url;
+            });
         }
     });
 

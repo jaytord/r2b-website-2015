@@ -1,32 +1,24 @@
 define([
-  'backbone'
-], function(Backbone){
+  'backbone',
+  'modules/bg_image_view'
+], function(Backbone, BgImageView){
 	var ProjectView = Backbone.View.extend({
 		initialize:function(options){
 			var _t = this;
 
 			_t.id = this.el.getAttribute("data-id");
+
 			_t.a_el = _t.$el.find("a.cfm-project")[0];
+
+			_t.bgimage = new BgImageView({ el:_t.a_el });
 			
 			_t.model = new Backbone.Model({ id:_t.id });
 
-			if( _t.el.hasAttribute("data-image") ) _t.image_url = _t.el.getAttribute("data-image");
-			if(_t.image_url) _t.loadimage();
+			_t.bgimage = new BgImageView({ el:_t.a_el });
 
-			console.log("initialize gallery image ", _t.a_el);
-		},
-		loadimage:function(){
-			var _t = this;
-
-			console.log("load gallery image");
-			
-			_t.img = new Image();
-			_t.img.onload = function(e){
-				_t.a_el.style.backgroundImage = "url(" + _t.image_url + ")";
-
-				console.log("load gallery image complete", _t.image_url);
-			};
-			_t.img.src = _t.image_url;
+			if( _t.el.hasAttribute("data-image") ){
+				_t.bgimage = new BgImageView({ el:_t.a_el, image_url: _t.el.getAttribute("data-image"), id:_t.id + "bg-image" });
+			}
 		}
 	});
 	return ProjectView;
