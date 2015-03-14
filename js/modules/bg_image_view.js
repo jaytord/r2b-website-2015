@@ -31,7 +31,7 @@ define([
 				setTimeout(function(){
 					_t.trigger("ready");
 					_t.$el.addClass("ready");
-				},200 + ( Math.random()*1800 ));	
+				},200 + ( Math.random()*1000 ));	
 			};
 			_t.img.src = _t.image_url;
 		}
