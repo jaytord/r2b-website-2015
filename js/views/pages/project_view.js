@@ -73,7 +73,7 @@ define([
 		onclose:function(){
 			$.each(this.banners,function(){
 				this.remove();
-			})
+			});
 		},
 	});
 	return ProjectView;

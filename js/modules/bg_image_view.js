@@ -28,8 +28,6 @@ define([
 					"background-image":"url(" + _t.image_url + ")"
 				});
 
-				
-
 				setTimeout(function(){
 					_t.trigger("ready");
 					_t.$el.addClass("ready");
