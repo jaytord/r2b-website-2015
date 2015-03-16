@@ -24,7 +24,7 @@
 	 	<div class="services-section">
 			<h2>Content Development</h2>
 			<ul>
-				<li>Positioned at the intersection of entertainment, advertising, and technology, our expert team of Designers, Animators, Technologists, Strategists, and Producers create innovative, solutions-driven digital experiences that shape the media landscape. Our expertise covers the full content ecosystem, from concept, to in-house production and editing, and content marketing and distribution, making content development seamless from start to finish.</li>
+				<li>Positioned at the intersection of entertainment, advertising, and technology, and working with our parent company Click 3X, a content powerhouse, our expert team of Designers, Animators, Technologists, Strategists, and Producers create innovative, solutions-driven digital experiences that shape the media landscape. Our expertise covers the full content ecosystem, from concept, to in-house production and editing, and content marketing and distribution, making content development seamless from start to finish.</li>
 			</ul>
 		</div>
 	</div>
