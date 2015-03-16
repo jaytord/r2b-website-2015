@@ -259,15 +259,7 @@ a:hover{
 			}
 
 			.page-header-description{
-				@media( min-width:$desktop){
-			    	@include prefix("column-count", 2);
-			    	@include prefix("column-gap", 40px);
-				}
-
-				p{
-					@include prefix("column-break-inside", "avoid");
-					margin:0 0 10px 0;
-				}
+				
 			}
 		}
 	}
