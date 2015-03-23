@@ -180,8 +180,9 @@ define([
             _t.autoplay         = false;
            
             _t.$el.removeClass("autoplay");
-            _t.$el.removeClass("paused");
             _t.$el.removeClass("playing");
+
+            setTimeout(function(){_t.$el.removeClass("paused");},100);
 
             if(this.controls) this.controls.reset();
         },

@@ -48,6 +48,17 @@ define([
 				var videoplayer 	= new VideoPlayerView( { el:this } );
 
 				videoplayer.load( video_url, mp4 ? "mp4" : "webm", poster_url );
+				videoplayer.on("play", function(){
+					var video = this;
+
+					$.each(_t.videos, function(i,v){
+						console.log("video", v);
+
+						if( v != video ){
+							v.reset();
+						}
+					});
+				});
 				
 				_t.videos.push(videoplayer);
 			});
