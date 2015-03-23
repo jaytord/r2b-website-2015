@@ -1,6 +1,7 @@
 <div id="home-page" class="page-content-inner">
 	<div id="reel-video" class="cfm-videoplayer" autoplay data-video-name="video/2015_R2B_WebTeaser" data-poster="<?= base_url(); ?>img/assets/video_posters/reel_poster.jpg">
 	    <div class="cfm-videoplayer-inner">
+	    	<div class="video-anchor-link"><a href="#montage-video"><span class="label">Watch Our Montage</span><span class="arrow"></span></a></div>
             <video class="cfm-videoplayer-mobile" width="960" height="540" controls></video>
             <div class="cfm-videoplayer-poster">
             	<div class="cfm-videoplayer-poster-inner">
@@ -70,7 +71,7 @@
 			<?php endforeach; ?>
 		</ul>
 	</div>
-	<div id="reel-video" class="section-header">
+	<div id="montage-video" class="section-header">
 		<h2>2015 MONTAGE</h2>
 	</div>
 	<div id="reel-videoplayer" class="cfm-videoplayer" data-video-name="<?= base_url(); ?>video/r2b_reel_01" data-poster="<?= base_url(); ?>img/assets/video_posters/montage_poster.jpg">
