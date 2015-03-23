@@ -131,8 +131,8 @@ define([
 		showControls:function(){
 			console.log("show");
 
-            if(this.hasplayed)
-			this.el.style.opacity = ".75";
+            if( this.hasplayed && !mobile )
+			 this.el.style.opacity = ".75";
 		},
 		hideControls:function(){
 			console.log("hide", this.playing);
