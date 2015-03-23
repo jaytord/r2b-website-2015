@@ -49,9 +49,9 @@ $active_group = 'default';
 $active_record = TRUE;
 
 $db['default']['hostname'] = 'localhost';
-$db['default']['username'] = 'r2b';
-$db['default']['password'] = 'r2b1234';
-$db['default']['database'] = 'r2b';
+$db['default']['username'] = 'sitesadmin';
+$db['default']['password'] = 'Click3x22';
+$db['default']['database'] = 'r2b_staging';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;
