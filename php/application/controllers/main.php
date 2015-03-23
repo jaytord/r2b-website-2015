@@ -6,6 +6,11 @@ class Main extends CI_Controller {
 	{
 		$viewdata = $this->getpagedata( $_page_id, $category_slug );
 
+		if($_page_id == "home"){
+			$featured_projects = $this->getpagedata( "projects", "featured" );
+			$viewdata["featured_projects"] = $featured_projects["data"];
+		}
+
 		$this->load->view( 'index_view', $viewdata );
 	}
 
@@ -24,6 +29,11 @@ class Main extends CI_Controller {
 	public function pagetemplate( $_page_id = "home", $category_slug = "" ){
 		$viewdata = $this->getpagedata( $_page_id, $category_slug );
 		$viewdata["template"] = true;
+
+		if($_page_id == "home"){
+			$featured_projects = $this->getpagedata( "projects", "featured" );
+			$viewdata["featured_projects"] = $featured_projects["data"];
+		}
 
 		$this->load->view( 'pages/' . $_page_id . "_view", $viewdata );
 	}
@@ -72,7 +82,7 @@ class Main extends CI_Controller {
 	}
 
 	public function getpagedata( $_page_id = "home", $_category_slug = "" ){
-		$model_name = ($_page_id == "campaigns" ? "projects" : $_page_id) . "_model";
+		$model_name = $_page_id . "_model";
  		$model_path = APPPATH . "models/" . $model_name . ".php";
 
  		$data = array();

@@ -53,7 +53,7 @@
                             </a>
                         </div>
                     </div>
-                    <div id="page-labels"><ul><li data-page-id="campaigns">CAMPAIGNS</li><li data-page-id="campaign">CAMPAIGN</li><li data-page-id="projects">PROJECTS</li><li data-page-id="project">PROJECT</li><li data-page-id="about">ABOUT</li><li data-page-id="clients">CLIENTS</li><li data-page-id="contact">CONTACT</li></ul></div>
+                    <div id="page-labels"><ul><li data-page-id="featured">FEATURED WORK</li><li data-page-id="projects">OUR WORK</li><li data-page-id="project">WORK</li><li data-page-id="about">ABOUT</li><li data-page-id="clients">CLIENTS</li><li data-page-id="contact">CONTACT</li></ul></div>
                 </div>
             </div>
 
@@ -94,8 +94,7 @@
                     <div class="mobile-menu-inner">
                         <ul>
                             <li><a data-navigate-to="home" href="<?= base_url(); ?>home"><h1>HOME</h1></a></li>
-                            <li><a data-navigate-to="campaigns" href="<?= base_url(); ?>campaigns"><h1>CAMPAIGNS</h1></a></li>
-                            <li><a data-navigate-to="projects" href="<?= base_url(); ?>projects"><h1>PROJECTS</h1></a></li>
+                            <li><a data-navigate-to="projects" href="<?= base_url(); ?>projects"><h1>OUR WORK</h1></a></li>
                             <li><a data-navigate-to="about" href="<?= base_url(); ?>home"><h1>ABOUT</h1></a></li>
                             <li><a data-navigate-to="clients" href="<?= base_url(); ?>clients"><h1>CLIENTS</h1></a></li>
                             <li><a data-navigate-to="contact" href="<?= base_url(); ?>contact"><h1>CONTACT</h1></a></li>

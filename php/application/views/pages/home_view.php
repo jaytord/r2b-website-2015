@@ -1,5 +1,5 @@
 <div id="home-page" class="page-content-inner">
-	<div id="reel-video" class="cfm-videoplayer" loop data-video-name="video/2015_R2B_WebTeaser" data-poster="<?= base_url(); ?>img/assets/video_posters/reel_poster.jpg">
+	<div id="reel-video" class="cfm-videoplayer" autoplay data-video-name="video/2015_R2B_WebTeaser" data-poster="<?= base_url(); ?>img/assets/video_posters/reel_poster.jpg">
 	    <div class="cfm-videoplayer-inner">
             <video class="cfm-videoplayer-mobile" width="960" height="540" controls></video>
             <div class="cfm-videoplayer-poster">
@@ -7,7 +7,7 @@
 	            	<div class="cfm-videoplayer-poster-header"><div class="cfm-videoplayer-poster-header-inner">
 					  <h1>STRATEGIC INSIGHTS</h1>
 					  <h2>POWERED BY&nbsp;TECHNOLOGY.</h2>
-					  <p>We create remarkable experiences through innovation in storytelling, technology, entertainment and social media.</p>
+					  <p>A strategically-driven creative agency specializing in digital marketing, communications and content development.</p>
 					  <div class="cfm-videoplayer-playbutton"><span class="arrow"></span></div>
 					</div></div>
 				</div>
@@ -22,7 +22,7 @@
 			</div>
 	    </div>
 	</div>
-	<div class="cfm-project-gallery">
+	<div class="main-navigation-gallery cfm-project-gallery">
 		<ul>
 			<li id="p1">
 				<div class="project-inner">
@@ -31,17 +31,10 @@
 					</a>
 				</div>
 			</li>
-			<li id="p2">
-				<div class="project-inner">
-					<a href="<?= base_url(); ?>campaigns" data-navigate-to="campaigns">
-						<div class="project-label"><div class="project-label-inner"><h3>CAMPAIGNS</h3></div></div>
-					</a>
-				</div>
-			</li>
 			<li id="p3">
 				<div class="project-inner">
 					<a href="<?= base_url(); ?>projects" data-navigate-to="projects">
-						<div class="project-label"><div class="project-label-inner"><h3>PROJECTS</h3></div></div>
+						<div class="project-label"><div class="project-label-inner"><h3>OUR WORK</h3></div></div>
 					</a>
 				</div>
 			</li>
@@ -59,6 +52,22 @@
 					</a>
 				</div>
 			</li>
+		</ul>
+	</div>
+	<div class="section-header">
+		<h2>FEATURED WORK</h2>
+	</div>
+	<div class="cfm-project-gallery">
+		<ul>
+			<?php foreach ($featured_projects as $key => $project): ?>
+			<li data-id="<?php echo $project->id; ?>" data-image="<?php echo base_url().'img/project_thumbnails/'.$project->thumbnail_image.'.jpg'; ?>">
+				<div class="project-inner">
+					<a class="cfm-project" href="<?php echo base_url().'featured/'.$project->slug; ?>" data-navigate-to="featured/<?php echo $project->slug; ?>">
+						<div class="project-label"><div class="project-label-inner"><h2><?php echo $project->title; ?></h2></div></div>
+					</a>
+				</div>
+			</li>
+			<?php endforeach; ?>
 		</ul>
 	</div>
 	<div id="reel-video" class="section-header">

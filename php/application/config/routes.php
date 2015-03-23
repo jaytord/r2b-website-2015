@@ -43,33 +43,28 @@ $route['404_override'] 					= '';
 
 /* js detail template routes */	
 $route['template/project/(:any)'] 		= 'main/projectdetailtemplate/$1/project/projects';
-$route['template/campaign/(:any)'] 		= 'main/projectdetailtemplate/$1/campaign/campaigns';
+$route['template/featured/(:any)'] 		= 'main/projectdetailtemplate/$1/featured/home';
 
 /* js page template routes */	
 $route['template/projects.php'] 		= 'main/pagetemplate/projects/project';
-$route['template/campaigns.php'] 		= 'main/pagetemplate/campaigns/campaign';
 $route['template/(:any).php'] 			= 'main/pagetemplate/$1';
 
 /* api routes */
+$route['utils/project/delete/(:any)/(:any)'] 								= 'utils/deleteproject/$1/$2';
+$route['utils/project/add/(:any)/(:any)/(:any)/(:any)/(:any)'] 				= 'utils/addproject/$1/$2/$3/$4/$5';
+$route['utils/project/add/video/(:any)/(:any)'] 							= 'utils/addprojectvideo/$1/$2';
+$route['utils/asset/delete/(:any)'] 										= 'utils/deleteasset/$1';
+
 // $route['api/fetchimages/(:any)'] 		= 'api/fetchimages/$1';
 // $route['api/parsedetails/(:any)'] 		= 'api/parsedetails/$1';
 // $route['api/creatprojectcategories'] 	= 'api/creatprojectcategories';
 // $route['api/parseassetmedia'] 			= 'api/parseassetmedia';
 // $route['api/(:any)'] 					= 'api/index/$1';
 
-$route['utils/project/delete/(:any)/(:any)'] 								= 'utils/deleteproject/$1/$2';
-$route['utils/project/add/(:any)/(:any)/(:any)/(:any)/(:any)'] 				= 'utils/addproject/$1/$2/$3/$4/$5';
-$route['utils/project/add/video/(:any)/(:any)'] 							= 'utils/addprojectvideo/$1/$2';
-$route['utils/asset/delete/(:any)'] 										= 'utils/deleteasset/$1';
-
-
 /* page routes */
 $route['project/(:any)'] 				= 'main/projectdetail/$1/project/projects';
-$route['campaign/(:any)'] 				= 'main/projectdetail/$1/campaign/campaigns';
-
+$route['featured/(:any)'] 				= 'main/projectdetail/$1/featured/home';
 $route['projects'] 						= 'main/index/projects/project';
-$route['campaigns'] 					= 'main/index/campaigns/campaign';
-
 $route['(:any)'] 						= 'main/index/$1';
 /* End of file routes.php */
 

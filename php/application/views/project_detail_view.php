@@ -2,7 +2,7 @@
 	<div class="page-header-inner">
 		<div class="cfm-project-naviation cfm-navigation">
 			<ul>
-				<li><a href="<?php echo base_url().$parent_slug; ?>" data-navigate-to="<?php echo $parent_slug; ?>" ><span class="line-arrow-left line-arrow"></span><?php echo $parent_slug == "campaigns" ? 'Campaigns' : 'Projects'; ?></a></li>
+				<li><a href="<?php echo base_url().$parent_slug; ?>" data-navigate-to="<?php echo $parent_slug; ?>" ><span class="line-arrow-left line-arrow"></span><?php echo $parent_slug == "home" ? 'Home' : 'All Work'; ?></a></li>
 				<?php if( !empty($next) ) : ?>
 				<li class="next-button"><a href="<?php echo base_url(). $category_slug. '/' . $next; ?>" data-navigate-to="<?php echo $category_slug. '/' . $next; ?>" ><span class="line-arrow-right line-arrow"></span></a></li>
 				<?php endif; ?>
@@ -65,7 +65,7 @@
 	<div class="page-footer-inner">
 		<div class="cfm-project-naviation cfm-navigation">
 			<ul>
-				<li><a href="<?php echo base_url().$parent_slug; ?>" data-navigate-to="<?php echo $parent_slug; ?>" ><span class="line-arrow-left line-arrow"></span><?php echo $parent_slug == "campaigns" ? 'Campaigns' : 'Projects'; ?></a></li>
+				<li><a href="<?php echo base_url().$parent_slug; ?>" data-navigate-to="<?php echo $parent_slug; ?>" ><span class="line-arrow-left line-arrow"></span><?php echo $parent_slug == "home" ? 'Home' : 'All Work'; ?></a></li>
 				<?php if( !empty($next) ) : ?>
 				<li class="next-button"><a href="<?php echo base_url(). $category_slug. '/' . $next; ?>" data-navigate-to="<?php echo $category_slug. '/' . $next; ?>" ><span class="line-arrow-right line-arrow"></span></a></li>
 				<?php endif; ?>

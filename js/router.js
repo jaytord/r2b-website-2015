@@ -26,7 +26,7 @@ define([
         new ClientsView({ collection:_t.page_collection }),
         new ContactView({ collection:_t.page_collection }),
         new ProjectView({ collection:_t.page_collection, id:"project"}),
-        new ProjectView({ collection:_t.page_collection, id:"campaign"})
+        new ProjectView({ collection:_t.page_collection, id:"featured"})
       ];
 
       $("#logo a").click(function(event){

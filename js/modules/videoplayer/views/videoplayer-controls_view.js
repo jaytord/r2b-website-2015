@@ -67,8 +67,6 @@ define([
                 _t.hidecontrolsto = setTimeout( function(){
                 	_t.hideControls();
                 }, 1000);
-
-                console.log("mouse move");
             });
 
             $(_t.video_el).on("mouseout", function() {
@@ -94,6 +92,11 @@ define([
                 clearTimeout(_t.showcontrolsto);
                 _t.showControls();
             });
+        },
+        reset:function(){
+            this.hasplayed          = false;
+            this.playing            = false;
+            this.el.style.opacity   = "0";
         },
         onprogress:function(_value){
         	this.progressBarContainer.style.backgroundSize = _value + "% 40px";

@@ -151,13 +151,13 @@ define([
                 });
 
                  $( _t.video ).on( "ended", function() {
-                    _t.video.currentTime = 0;
-                    if(_t.controls) _t.controls.ontimeupdate(0);
+                    //_t.video.currentTime = 0;
+                    //if(_t.controls) _t.controls.ontimeupdate(0);
 
                     if(_t.loop){  
                         _t.play();                  
                     } else {
-                        _t.toPausedState();
+                        _t.reset();
                     }
                 });
 
@@ -171,25 +171,19 @@ define([
         reset:function(){
             var _t = this;
 
-            if(this.playing){
-                _t.video.pause();
-                _t.video.currentTime = 0;
-                if(_t.controls) _t.controls.ontimeupdate(0);
+            _t.video.pause();
+            _t.video.currentTime = 0;
 
-                // _t.video.currentTime = 0;
-                // if(_t.controls) _t.controls.ontimeupdate(0);
+            if(_t.controls) _t.controls.ontimeupdate(0);
 
-                // setTimeout(function(){
-                //     _t.autoplay         = false;
-                //     _t.loop             = false;
-                //     _t.nocontrols       = false;
+            _t.playing          = false;
+            _t.autoplay         = false;
+           
+            _t.$el.removeClass("autoplay");
+            _t.$el.removeClass("paused");
+            _t.$el.removeClass("playing");
 
-                //     _t.$el.removeClass("loop");
-                //     _t.$el.removeClass("autoplay");
-                //     _t.$el.removeClass("nocontrols");
-                //     _t.$el.removeClass("paused");
-                // },500);
-            }
+            if(this.controls) this.controls.reset();
         },
         toPausedState:function(){
             this.playing = false;
