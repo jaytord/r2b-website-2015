@@ -27,7 +27,7 @@
 		case '192.168.1.5':
 			define('ENVIRONMENT', 'local');
 			break;
-		case 'staging.click3x.com':
+		case 'staging.reason2be.com':
 			define('ENVIRONMENT', 'staging');
 			break;
 		default:
