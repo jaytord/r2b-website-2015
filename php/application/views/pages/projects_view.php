@@ -1,9 +1,9 @@
 <div id="projects-page" class="page-content-inner">
-	<div class="page-header"><div class="page-header-inner">
+	<!-- <div class="page-header"><div class="page-header-inner">
 		<div class="page-header-description">
 			These projects were all built by our partner and parent company, the content execution powerhouse Click 3X.
 		</div>	
-	</div></div>
+	</div></div> -->
 	<div class="cfm-project-gallery">
 		<ul>
 			<?php foreach ($data as $key => $project): ?>
