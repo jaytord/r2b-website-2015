@@ -2,7 +2,7 @@
 	<div class="page-header"><div class="page-header-inner">
 		<h1>ABOUT US</h1>
 		<div class="page-header-description">
-			A strategically- driven creative agency specializing in digital marketing, communications and content development, we specialize in integrated marketing strategies built to evolve with the ever-changing landscape, both on and offline. Born from award-winning design studio Click3x, our team consists of a diverse group of over 100 talented individuals that embody left and right brain disciplines.
+			A strategically- driven creative agency specializing in digital marketing, communications and content development, we specialize in integrated marketing strategies built to evolve with the ever-changing landscape, both on and offline. Born from award-winning design studio <a href="http://www.click3x.com">Click <span style="font-family:serif;">3</span>X</a>, our team consists of a diverse group of over 100 talented individuals that embody left and right brain disciplines.
 		</div>	
 	</div></div>
 	<div class="section-header">
@@ -24,7 +24,7 @@
 	 	<div class="services-section">
 			<h2>Content Development</h2>
 			<ul>
-				<li>Positioned at the intersection of entertainment, advertising, and technology, and working with our parent company Click 3X, a content powerhouse, our expert team of Designers, Animators, Technologists, Strategists, and Producers create innovative, solutions-driven digital experiences that shape the media landscape. Our expertise covers the full content ecosystem, from concept, to in-house production and editing, and content marketing and distribution, making content development seamless from start to finish.</li>
+				<li>Positioned at the intersection of entertainment, advertising, and technology, and working with our parent company <a href="http://www.click3x.com">Click <span style="font-family:serif;">3</span>X</a>, a content powerhouse, our expert team of Designers, Animators, Technologists, Strategists, and Producers create innovative, solutions-driven digital experiences that shape the media landscape. Our expertise covers the full content ecosystem, from concept, to in-house production and editing, and content marketing and distribution, making content development seamless from start to finish.</li>
 			</ul>
 		</div>
 	</div>
