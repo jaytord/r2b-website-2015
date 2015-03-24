@@ -1,5 +1,5 @@
 <div id="home-page" class="page-content-inner">
-	<div id="reel-video" class="cfm-videoplayer" autoplay data-video-name="video/2015_R2B_WebTeaser" data-poster="<?= base_url(); ?>img/assets/video_posters/reel_poster.jpg">
+	<div id="reel-video" class="cfm-videoplayer" holdlastframe autoplay data-video-name="video/2015_R2B_WebTeaser" data-poster="<?= base_url(); ?>img/assets/video_posters/reel_poster.jpg">
 	    <div class="cfm-videoplayer-inner">
 	    	<div class="video-anchor-link"><a href="#montage-video"><span class="label">Watch Our Montage</span><span class="arrow"></span></a></div>
             <video class="cfm-videoplayer-mobile" width="960" height="540" controls></video>

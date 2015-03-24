@@ -23,6 +23,8 @@ define([
                 if( _t.loop )       _t.$el.addClass( "loop" ); 
             }
 
+            _t.holdlastframe                = _t.el.hasAttribute( "holdlastframe" );
+
             _t.model                        = new Backbone.Model( { ready:false } );
 
             _t.model.on( "change:ready", function( _model ){
@@ -157,7 +159,7 @@ define([
                     if(_t.loop){  
                         _t.play();                  
                     } else {
-                        _t.reset();
+                        if( !_t.holdlastframe) _t.reset();
                     }
                 });
 
