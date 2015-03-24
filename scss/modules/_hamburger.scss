@@ -18,7 +18,7 @@
   span{
     display: block; position: absolute;
     height: 20%; width: 100%;
-    background: #EEE; opacity: 1;
+    background: #CCC; opacity: 1;
     left: 0; top:0;
     
     @include prefix("transform", rotate(0deg) );

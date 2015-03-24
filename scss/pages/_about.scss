@@ -37,14 +37,14 @@
 	 		page-break-inside: avoid;
 	       	break-inside: avoid;
        		vertical-align: top;
-       		padding:60px 20px 20px 20px;
+       		padding:20px 20px 20px 20px;
 
        		@media(min-width:$tablet-small){
-       			padding:60px 40px 20px 40px;
+       		   padding:20px 40px 20px 40px;
        		}
        		
        		@media(min-width:$tablet-large){
-       			padding:60px 80px 20px 80px;
+       		   padding:40px 80px 40px 80px;
        		}
 
        		h2{
