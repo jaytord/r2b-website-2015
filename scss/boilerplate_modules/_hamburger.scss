@@ -1,0 +1,46 @@
+.hamburger{
+  float: right;
+  width: 50px; height: 50px;
+  cursor:pointer;
+
+  @include prefix("transform",rotate(0deg));
+
+  .hamburger-inner{
+    padding:15px;
+
+    a{
+      display: block;
+      width:20px; height:20px;
+      position: relative;
+    }
+  }
+  
+  span{
+    display: block; position: absolute;
+    height: 20%; width: 100%;
+    background: #EEE; opacity: 1;
+    left: 0; top:0;
+    
+    @include prefix("transform", rotate(0deg) );
+    @include prefix("transition", .25s ease-in-out);
+
+    &:nth-child(2), &:nth-child(3){ top: 40%; }
+    &:nth-child(4){ top: 80%; }
+  }
+
+  &:hover{
+    span{
+      background:#111;
+    }
+  }
+}
+
+.menu-open{
+  .hamburger{
+    span{
+      &:nth-child(1), &:nth-child(4){ top: 40%; width: 0%; left: 50%; }
+      &:nth-child(2){ @include prefix("transform",rotate(45deg)); }
+      &:nth-child(3){ @include prefix("transform",rotate(-45deg)); }
+    }
+  }
+}

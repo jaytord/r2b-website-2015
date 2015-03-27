@@ -1,5 +1,5 @@
 <div id="home-page" class="page-content-inner">
-	<div id="reel-video" class="cfm-videoplayer" holdlastframe autoplay data-video-name="video/2015_R2B_WebTeaser" data-poster="<?= base_url(); ?>img/assets/video_posters/reel_poster.jpg">
+	<div id="reel-video" class="cfm-videoplayer" holdlastframe autoplay data-video-name="video/2015_R2B_WebTeaser" data-poster="http://media.click3x.com/images/r2b/modules/banner-video/reel_poster.jpg">
 	    <div class="cfm-videoplayer-inner">
 	    	<div class="video-anchor-link"><a href="#montage-video"><span class="label">Watch Our Montage</span><span class="arrow"></span></a></div>
             <video class="cfm-videoplayer-mobile" width="960" height="540" controls></video>
@@ -56,7 +56,7 @@
 	<div class="cfm-project-gallery">
 		<ul>
 			<?php foreach ($featured_projects as $key => $project): ?>
-			<li data-id="<?php echo $project->id; ?>" data-image="<?php echo base_url().'img/project_thumbnails/'.$project->thumbnail_image.'.jpg'; ?>">
+			<li data-id="<?php echo $project->id; ?>" data-image="http://media.click3x.com/images/r2b/project_thumbnails/<?php echo $project->thumbnail_image; ?>.jpg">
 				<div class="project-inner">
 					<a class="cfm-project" href="<?php echo base_url().'featured/'.$project->slug; ?>" data-navigate-to="featured/<?php echo $project->slug; ?>">
 						<div class="project-label"><div class="project-label-inner"><h2><?php echo $project->title; ?></h2></div></div>
@@ -69,7 +69,7 @@
 	<div id="montage-video" class="section-header">
 		<h2>2015 MONTAGE</h2>
 	</div>
-	<div id="reel-videoplayer" class="cfm-videoplayer" data-video-name="<?= base_url(); ?>video/r2b_reel_01" data-poster="<?= base_url(); ?>img/assets/video_posters/montage_poster.jpg">
+	<div id="reel-videoplayer" class="cfm-videoplayer" data-video-name="<?= base_url(); ?>video/r2b_reel_01" data-poster="http://media.click3x.com/images/r2b/modules/banner-video/montage_poster.jpg">
 	    <div class="cfm-videoplayer-inner">
             <video class="cfm-videoplayer-mobile" width="960" height="540" controls></video>
             <div class="cfm-videoplayer-poster">

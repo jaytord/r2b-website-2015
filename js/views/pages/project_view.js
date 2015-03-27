@@ -69,8 +69,8 @@ define([
 				router.navigate( this.getAttribute("data-navigate-to"),true );
 			});
 
-			//build banner asset images
-			this.$el.find(".project-asset-image").each(function(){
+			//build banner module images
+			this.$el.find(".project-module-image").each(function(){
 				_t.banners.push( new BgImageView({ el:this }) );
 			});
 

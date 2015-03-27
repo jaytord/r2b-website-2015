@@ -18,17 +18,19 @@
 		<div class="project-heading-inner">
 			<h2><?php echo $data->heading; ?></h2>
 			<h1><?php echo $data->subhead; ?></h1>
-			<?php if( isset($assets) && count($assets) > 1): ?><div class="video-anchor-link"><a href="#<?php echo $data->slug; ?>-video"><span class="arrow"></span><span class="label"><?php echo !empty($assets[1]->title) ? $assets[1]->title : "Watch Case Study"; ?></span></a></div><?php endif; ?>
+			<?php if( isset($modules) && count($modules) > 1): ?><div class="video-anchor-link"><a href="#<?php echo $data->slug; ?>-video"><span class="arrow"></span><span class="label"><?php echo !empty($modules[1]->title) ? $modules[1]->title : "Watch Case Study"; ?></span></a></div><?php endif; ?>
 		</div>
 	</div>
-	<div class="featured-asset">
-		<div class="featured-asset-inner project-asset-inner">
-			<?php if( isset($assets) && count($assets) > 0): ?><?php $this->load->view( "asset/".$assets[0]->asset_type_name."_asset_view", array("asset"=>$assets[0]) ); ?><?php endif; ?>
+	<div class="featured-module">
+		<div class="featured-module-inner project-module-inner">
+			<?php if( isset($modules) && count($modules) > 0): ?>
+			<?php $this->load->view( "modules/".$modules[0]->module_type_name."_view", array("module"=>$modules[0]) ); ?>
+			<?php endif; ?>
 		</div>
 	</div>
 	<div class="project-about">
 		<div class="project-about-inner">
-			<div class="project-asset-image project-logo" data-image="<?php echo $client_logo; ?>"></div>
+			<div class="project-module-image project-logo" data-image="http://media.click3x.com/images/r2b/client_logos/<?php echo $data->client_logo; ?>.jpg"></div>
 			<div class="project-description">
 				<div class="project-description-inner">
 					<?php 
@@ -51,11 +53,11 @@
             </div>
 		</div>
 	</div>
-	<div class="project-assets-container">
-		<?php if(isset($assets)): for($i = 1; $i<count($assets); $i++): $asset=$assets[$i] ?>
-			<div class="project-asset <?php echo $asset->asset_type_name; ?>">
-				<div class="project-asset-inner">
-				<?php $this->load->view( "asset/".$asset->asset_type_name."_asset_view", array("asset"=>$asset) ); ?>
+	<div class="project-module-container">
+		<?php if(isset($modules)): for($i = 1; $i<count($modules); $i++): $module=$modules[$i] ?>
+			<div class="project-module <?php echo $module->module_type_name; ?>">
+				<div class="project-module-inner">
+				<?php $this->load->view( "modules/".$module->module_type_name."_view", array("module"=>$module) ); ?>
 				</div>
 			</div>
 		<?php endfor; endif; ?>

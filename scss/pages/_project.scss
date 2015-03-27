@@ -3,7 +3,7 @@
  */
 
 #project-page{
-	.project-asset-image{
+	.project-module-image{
 		background-size:cover;
 		background-repeat:no-repeat;
 		background-position:center center;
@@ -87,11 +87,11 @@
 			}
 			
 		}
-		.project-asset{
+		.project-module{
 			display: block;
 
-			.project-asset-description{
-				.project-asset-description-inner{
+			.project-module-description{
+				.project-module-description-inner{
 					padding:10px 20px 10px 20px;
 
 					@media(min-width:$tablet-small){
@@ -125,9 +125,9 @@
 			}
 		}
 
-		@import '../assets/detail.scss';
-		@import '../assets/banner-image.scss';
-		@import '../assets/gallery.scss';
+		@import '../project_modules/detail.scss';
+		@import '../project_modules/banner-image.scss';
+		@import '../project_modules/gallery.scss';
 
 		.project-about{
 			max-width: 1000px;

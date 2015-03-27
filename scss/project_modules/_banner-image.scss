@@ -1,0 +1,11 @@
+.project-module{
+	&.banner-image, &.banner-video{
+		.project-module-inner{
+			padding:0;
+		}
+			
+		.project-module-image{
+			width:100%;
+		}
+	}
+}

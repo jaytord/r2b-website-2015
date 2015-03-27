@@ -3,7 +3,6 @@ define([
   'collections/page_collection',
   'pages/home_view',
   'pages/projects_view',
-  'pages/campaigns_view',
   'pages/about_view',
   'pages/clients_view',
   'pages/contact_view',
@@ -11,7 +10,7 @@ define([
   'modules/navigation/views/navigation_view',
   'modules/videoplayer/views/videoplayer_view',
   'modules/hamburger/hamburger_view'
-], function (Backbone, PageCollection, HomeView, ProjectsView, CampaignsView, AboutView, ClientsView, ContactView, ProjectView, NavigationView, VideoPlayerView, HamburgerView){
+], function (Backbone, PageCollection, HomeView, ProjectsView, AboutView, ClientsView, ContactView, ProjectView, NavigationView, VideoPlayerView, HamburgerView){
   var Router   = Backbone.Router.extend({
     initialize:function(){
       var _t = this;
@@ -21,7 +20,6 @@ define([
       _t.page_views = [   
         new HomeView({ collection:_t.page_collection }),
         new ProjectsView({ collection:_t.page_collection }),
-        new CampaignsView({ collection:_t.page_collection }),
         new AboutView({ collection:_t.page_collection }),
         new ClientsView({ collection:_t.page_collection }),
         new ContactView({ collection:_t.page_collection }),

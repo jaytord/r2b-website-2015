@@ -56,7 +56,7 @@ class Main extends CI_Controller {
 		$project_data = $this->projects_model->get( array( "slug"=>$_detailslug ) );
 		$project_data = $project_data[0];
 
-		$assets = $this->projects_model->getassets( $project_data->id );
+		$modules = $this->projects_model->getmodules( $project_data->id );
 		$links = $this->projects_model->getlinks( $project_data->id );
 
 		$nextrecord = $this->projects_model->nextproject( $project_data->id, $_category_slug );
@@ -65,19 +65,12 @@ class Main extends CI_Controller {
 		$previousrecord = $this->projects_model->previousproject( $project_data->id, $_category_slug );
 		if($previousrecord) $previousrecord = $previousrecord->slug;
 
-		if( !empty( $project_data->client_logo ) ){
-			$client_logo = base_url()."img/client_logos/".$project_data->client_logo.".jpg";
-		} else {
-			$client_logo = "http://placehold.it/410/111111/EEEEEE&text=LOGO";
-		}
-
 		return array( 
 			"data"=>$project_data, 
 			"previous"=>$previousrecord, 
 			"next"=>$nextrecord, 
-			"assets"=>$assets, 
-			"links"=>$links,
-			"client_logo"=>$client_logo
+			"modules"=>$modules, 
+			"links"=>$links
 		);
 	}
 

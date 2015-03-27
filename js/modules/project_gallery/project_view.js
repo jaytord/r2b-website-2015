@@ -10,11 +10,7 @@ define([
 
 			_t.a_el = _t.$el.find("a.cfm-project")[0];
 
-			_t.bgimage = new BgImageView({ el:_t.a_el });
-			
 			_t.model = new Backbone.Model({ id:_t.id });
-
-			_t.bgimage = new BgImageView({ el:_t.a_el });
 
 			if( _t.el.hasAttribute("data-image") ){
 				_t.bgimage = new BgImageView({ el:_t.a_el, image_url: _t.el.getAttribute("data-image"), id:_t.id + "bg-image" });

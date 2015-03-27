@@ -12,7 +12,8 @@ class Media_Model extends C3X_Model
     		'description'           	=> array("shown"=>true,     "label"=>"Description"),
             'filename'           		=> array("shown"=>true,     "label"=>"File Name"),
             'media_category_id'         => array("shown"=>true,     "label"=>"Media Category ID"),
-            'media_type_id'           	=> array("shown"=>true,     "label"=>"Media Type ID")
+            'media_type_id'           	=> array("shown"=>true,     "label"=>"Media Type ID"),
+            'href'                      => array("shown"=>true,     "label"=>"Href"),
 		);
 	}
 }

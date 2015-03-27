@@ -1,0 +1,63 @@
+.project-module{
+	.project-module-inner{padding:10px;}
+
+	.project-module-description{
+		.project-module-description-inner{
+		}
+	}
+
+ 	div.cfm-project-gallery{
+ 		padding:0 0px;
+
+		@media(min-width:$tablet-small){
+			padding:0 20px;
+		}
+
+		ul{
+	 		li{
+				div.project-inner{
+					padding:10px;
+
+		 			a{
+		 				div.project-label{
+		 					transform: scale(1) !important;
+		 					background:transparent;
+		 					
+		 					div.project-label-inner{
+		 						background:#FFF;
+		 						position: absolute;
+		 						display: block;
+		 						top:20px; left:20px;
+		 						padding:10px 20px;
+
+		 						h2{
+		 							font-family: "gotham-bold";
+		 							font-size: 12px;
+		 						}
+		 					}
+		 				}
+
+		 				&:hover{
+		 					div.project-label{
+			 					div.project-label-inner{
+			 					}
+			 				}
+		 				}
+	 				}	
+
+	 				&.hidelabel{
+	 					a{
+	 						cursor: default;
+
+	 						div.project-label{
+	 							div.project-label-inner{
+	 								display: none;
+	 							}
+	 						}
+	 					}
+	 				}
+	 			}
+	 		}
+	 	}
+	 }
+}

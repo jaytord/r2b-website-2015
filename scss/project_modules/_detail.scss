@@ -1,0 +1,47 @@
+.project-module{
+	&.detail-left, &.detail-right{
+		width: 100%;
+		max-width: 1000px;
+		margin:0 auto;
+
+		.project-module-inner{
+			display: inline-block;
+			padding:40px 40px 40px 40px;
+
+			@media(min-width:1080px){
+				padding:40px 0px 40px 0px;
+			}
+		}
+
+		@include clearfix();
+
+		.project-module-image{
+			width: 100%;
+			padding-bottom:100%;
+			float: none;
+
+			@media(min-width:$tablet-large){
+				width: 50%;
+				float: left;
+				padding-bottom:50%;
+			}
+		}
+	}
+
+	&.detail-right{
+		.project-module-description{	
+			.project-module-description-inner{
+				padding:0 0 40px 0;
+			}
+
+			@media(min-width:$tablet-large){
+				width: 50%;	
+				float: left;
+
+				.project-module-description-inner{
+					padding:0 40px 0 0;
+				}
+			}
+		}
+	}
+}

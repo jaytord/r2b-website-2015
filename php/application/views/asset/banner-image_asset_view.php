@@ -1,1 +1,0 @@
-<div class="project-asset-image" data-image="<?php echo base_url().'img/assets/headers/'.$asset->media[0]->filename; ?>.jpg"></div>
