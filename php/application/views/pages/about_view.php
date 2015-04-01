@@ -2,7 +2,7 @@
 	<div class="page-header"><div class="page-header-inner">
 		<h1>ABOUT US</h1>
 		<div class="page-header-description">
-			<p>The industry today is changing, quickly. The ability to define it as it continues to evolve is even more challenging. As advertisers become marketers, marketing blends with PR and digital dominates...well, everything, it's easy to fall into the identity crisis conundrum in an effort to sell yourself as the answer to any and every brand need.</p>
+			<p>The industry today is changing, quickly. The ability to define it as it continues to evolve is even more challenging. As advertisers become marketers, marketing blends with PR and digital dominates, it’s easy to fall into the identity crisis conundrum in an effort to sell yourself as the answer to any and every brand need.</p>
 			<p>For us, it's simple: building things is what we do best, it's how we began and what sets us apart. While most agencies today are rushing to establish their own version of a production house, we've had that covered for more than 20 years, only with a highly-specialized strategic arm to guide it.</p>
             <p>For every big idea and successful strategy born from our intellectual incubator of sorts, we have an in-house army of creative talent able to bring those ideas to life.</p>
 		</div>	
@@ -49,7 +49,7 @@
 					<h2>Jessica Adams de Guardiola</h2>
 					<h3>Partner | Strategic Communications</h3>
 					<p>Jessica is an award-winning public relations executive, with extensive experience in media relations, campaign development and strategic branding. Prior to joining Raison D'Etre, Jessica held executive positions at Regan Communications and most recently, HL Group. During her time at HL Group, Jessica oversaw campaign strategies fornational brands including Amazon Fashion, Converse, DVF's 40th Anniversary Journey of a Dress, Hudson Jeans and Oscar de la Renta Kids to name a few.</p>
-					<p>In 2008, Jessica founded 5s Public Relations, a Boston-based boutique PR firm specializing in fashion, beauty and lifestyle clientele and Studio 5 Showroom, Boston’s first fashion showroom and recipient of the Boston Globe’s Best of 2011 Award. In 2011, 5sPR was acquired by Regan Communications Group, where Jessica was brought on asvice president. She managed media relations strategies for a wide range of hospitality and lifestyle clients including renowned venues Capitale and espace, Mohegan Sun and the David Ortiz Celebrity Golf Classic.</p>
+					<p>In 2008, Jessica founded 5s Public Relations, a Boston-based boutique PR firm specializing in fashion, beauty and lifestyle clientele and Studio 5 Showroom, Boston’s first fashion showroom and recipient of the Boston Globe’s Best of 2011 Award. In 2011, 5sPR was acquired by Regan Communications Group, where Jessica was brought on as vice president. She managed media relations strategies for a wide range of hospitality and lifestyle clients including renowned venues Capitale and espace, Mohegan Sun and the David Ortiz Celebrity Golf Classic.</p>
 				</div>
 			</div>
 		</div>
@@ -59,10 +59,8 @@
 				<div class="project-label-inner">
 					<h2>Heather Bergstein</h2>
 					<h3>Director, Strategy & Analytics</h3>
-					<p>A seasoned veteran in digital marketing on behalf of global brands, Heather joins Raison D’Être as Director of Strategy & Analytics. Prior to joining, Heather held the executive position of Channel Communications Manager for Skincare at Unilever following her previous role as Director of Corporate Digital Marketing & Media at The Estee Lauder Companies. During her time at The Estee Lauder Companies, she served as a company thought leader, driving overall digital media strategy and best practices globally while elevating the company’s digital media activities across a portfolio of 29 luxury beauty and fragrance brands. Additional experience includes positions at esteemed brands L’Oreal and Ralph Lauren.</p>
-					<p>An expert at partnering across brands, agencies, and publishers, Heather leveraged her 13 years of experience in beauty and fashion to advise the Estee Lauder brands as they crafted digital media strategies that ultimately drove impact across their paid, owned and earned brand platforms.</p>
-					<p>Heather currently serves on the IAB Digital Video Committee and was named one of the  “Brand innovators 40 Under 40, Class of 2013”.</p>
-					<p>Heather received her MBA from Fordham University and her undergraduate degree from NYU.</p>
+					<p>A results-driven digital brand marketing and media expert, Heather Bergstein has spent over a decade working with global beauty and fashion companies including L’Oreal, Ralph Lauren and Estee Lauder. Heather’s career began in traditional marketing, and that remains to be the foundation of her approach; she’s not a digital marketer, but a marketer with digital expertise. Fiercely passionate about the space, Heather believes there is tremendous opportunity to succeed across the paid, owned and earned landscape. By marrying the best of emerging tech, strategy, media and marketing, she helps clients develop holistic and integrated strategies, built to evolve as the landscape shifts, to drive current and future goals.</p>
+					<p>A passionate digital leader, Heather is a frequent panelist and industry participant with a focus on digital content, video and media strategy; her industry recognition speaks to her dedication. Heather received her MBA from Fordham University.</p>
 				</div>
 			</div>
 		</div>
