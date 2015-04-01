@@ -48,7 +48,7 @@
 				<div class="project-label-inner">
 					<h2>Jessica Adams de Guardiola</h2>
 					<h3>Partner | Strategic Communications</h3>
-					<p>Jessica is an award-winning public relations executive, with extensive experience in media relations, campaign development and strategic branding. Prior to joining Raison D'Etre, Jessica held executive positions at Regan Communications and most recently, HL Group. During her time at HL Group, Jessica oversaw campaign strategies fornational brands including Amazon Fashion, Converse, DVF's 40th Anniversary Journey of a Dress, Hudson Jeans and Oscar de la Renta Kids to name a few.</p>
+					<p>Jessica is an award-winning public relations executive, with extensive experience in media relations, campaign development and strategic branding. Prior to joining Raison D'Etre, Jessica held executive positions at Regan Communications and most recently, HL Group. During her time at HL Group, Jessica oversaw campaign strategies for national brands including Amazon Fashion, Converse, DVF's 40th Anniversary Journey of a Dress, Hudson Jeans and Oscar de la Renta Kids to name a few.</p>
 					<p>In 2008, Jessica founded 5s Public Relations, a Boston-based boutique PR firm specializing in fashion, beauty and lifestyle clientele and Studio 5 Showroom, Boston’s first fashion showroom and recipient of the Boston Globe’s Best of 2011 Award. In 2011, 5sPR was acquired by Regan Communications Group, where Jessica was brought on as vice president. She managed media relations strategies for a wide range of hospitality and lifestyle clients including renowned venues Capitale and espace, Mohegan Sun and the David Ortiz Celebrity Golf Classic.</p>
 				</div>
 			</div>
