@@ -64,5 +64,17 @@
 				</div>
 			</div>
 		</div>
+		<div class="services-section clearfix">
+			<img align="left" src="<?= base_url(); ?>img/tim.jpg" />
+			<div class="project-label">
+				<div class="project-label-inner">
+					<h2>Tim Dingersen</h2>
+					<h3>Creative Director</h3>
+					<p>With over 15 years of experience, Tim brings a wealth of knowledge and experience to Reason2be. While his breadth of experience runs the gamut, his guiding principles and industry approach have remained the same. The result? Creating visual and interactive experiences that people truly want to engage with. Under Tim’s watchful eye, it's not about cheap flashy techniques or the trend of the moment, but rather creating content with longevity that truly resonates with an audience and further benefits the brand.</p>
+					<p>Having started at Click3x over a decade ago, Tim later embarked out on his own in 2008 to develop Luckeyou, a boutique creative services agency based in New York. During his time at Luckeyou, Tim oversaw all creative and managed direct-to-brand relationships with a select roster of clientele including Norwegian Cruise Line and ESPN, just to name a few before returning to Click3X in 2013.</p>
+					<p>Most recently, he's heading up the Creative division at Reason2be,  where he will lead the agency division utilizing with the same beliefs that have made him one of the most well-regarded talents in the industry.</p>
+				</div>
+			</div>
+		</div>
 	</div>
 </div>
