@@ -17,12 +17,14 @@ class Projects_Model extends C3X_Model
             'description'                           => array("shown"=>true,     "label"=>"Description"),
             'thumbnail_image'                       => array("shown"=>true,     "label"=>"Thumbnail Image"),
             'detail_name'                           => array("shown"=>true,     "label"=>"Detail Name"),
-            'client_logo'                           => array("shown"=>true,     "label"=>"Client Logo")
+            'client_logo'                           => array("shown"=>true,     "label"=>"Client Logo"),
+            'published'                             => array("shown"=>false,    "label"=>"Published"),
+            'date_created'                          => array("shown"=>false,    "label"=>"Date Created")
         );
 	}
 
     function getbycategory( $category = "casestudy" ){
-        $query = $this->db->query("SELECT * FROM ( SELECT category_name,category_id,project_id FROM project_category_lu CROSS JOIN categories ON categories.id = project_category_lu.category_id AND category_name = '".$category."' ) AS filtered_lu LEFT JOIN projects ON projects.id = project_id ORDER BY `order`");
+        $query = $this->db->query("SELECT * FROM ( SELECT category_name,category_id,project_id FROM project_category_lu CROSS JOIN categories ON categories.id = project_category_lu.category_id AND category_name = '".$category."' ) AS filtered_lu LEFT JOIN projects ON projects.id = project_id ORDER BY date_created DESC,`order` ASC ");
         return $query->result();
     }
 
@@ -44,15 +46,23 @@ class Projects_Model extends C3X_Model
         return $query->result();
     }
 
-    function nextproject($pid, $category_slug){
-        $query = $this->db->query("SELECT slug,project_id FROM projects LEFT JOIN project_category_lu ON projects.id=project_category_lu.project_id LEFT JOIN categories ON categories.id=project_category_lu.category_id WHERE category_name='".$category_slug."' AND project_id > '".$pid."' ORDER BY project_id LIMIT 1");
+    function nextproject($pid, $category_slug, $pdate){
+        $query = $this->db->query("SELECT slug,project_id FROM projects LEFT JOIN project_category_lu ON projects.id=project_category_lu.project_id LEFT JOIN categories ON categories.id=project_category_lu.category_id WHERE category_name='".$category_slug."' AND date_created < '".$pdate."' AND published='on' ORDER BY date_created DESC,`order` ASC LIMIT 1 ");
         $result = $query->result();
+        // echo 'NEXT: ';
+        // echo '<pre>';
+        // print_r($result);
+        // echo '</pre>';
         return !empty( $result ) ? $result[0] : array();
     }
 
-    function previousproject($pid, $category_slug){
-        $query = $this->db->query("SELECT slug,project_id FROM projects LEFT JOIN project_category_lu ON projects.id=project_category_lu.project_id LEFT JOIN categories ON categories.id=project_category_lu.category_id WHERE category_name='".$category_slug."' AND project_id < '".$pid."' ORDER BY project_id DESC LIMIT 1");
+    function previousproject($pid, $category_slug, $pdate){
+        $query = $this->db->query("SELECT slug,project_id FROM projects LEFT JOIN project_category_lu ON projects.id=project_category_lu.project_id LEFT JOIN categories ON categories.id=project_category_lu.category_id WHERE category_name='".$category_slug."' AND date_created > '".$pdate."' AND published='on' ORDER BY date_created ASC,`order` DESC LIMIT 1");
         $result = $query->result();
+        // echo 'PREV: ';
+        // echo '<pre>';
+        // print_r($result);
+        // echo '</pre>';
         return !empty( $result ) ? $result[0] : array();
     }
 }
