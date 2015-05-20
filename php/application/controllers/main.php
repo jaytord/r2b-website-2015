@@ -52,17 +52,38 @@ class Main extends CI_Controller {
 
 	/*==== DATA FUNCTIONS =====*/
 	public function getprojectdetaildata( $_detailslug, $_category_slug = ""){
-		$model = $this->load->model( "projects_model" );
+		// $model = $this->load->model( "projects_model" );
+		// $project_data = $this->projects_model->get( array( "slug"=>$_detailslug ) );
+		// $project_data = $project_data[0];
+
+		// $modules = $this->projects_model->getmodules( $project_data->id );
+		// $links = $this->projects_model->getlinks( $project_data->id );
+
+		// $nextrecord = $this->projects_model->nextproject( $project_data->id, $_category_slug );
+		// if($nextrecord) $nextrecord = $nextrecord->slug;
+
+		// $previousrecord = $this->projects_model->previousproject( $project_data->id, $_category_slug );
+		// if($previousrecord) $previousrecord = $previousrecord->slug;
+
+		// return array( 
+		// 	"data"=>$project_data, 
+		// 	"previous"=>$previousrecord, 
+		// 	"next"=>$nextrecord, 
+		// 	"modules"=>$modules, 
+		// 	"links"=>$links
+		// );
+
+				$model = $this->load->model( "projects_model" );
 		$project_data = $this->projects_model->get( array( "slug"=>$_detailslug ) );
 		$project_data = $project_data[0];
 
 		$modules = $this->projects_model->getmodules( $project_data->id );
 		$links = $this->projects_model->getlinks( $project_data->id );
 
-		$nextrecord = $this->projects_model->nextproject( $project_data->id, $_category_slug );
+		$nextrecord = $this->projects_model->nextproject( $project_data->id, $_category_slug, $project_data->date_created  );
 		if($nextrecord) $nextrecord = $nextrecord->slug;
 
-		$previousrecord = $this->projects_model->previousproject( $project_data->id, $_category_slug );
+		$previousrecord = $this->projects_model->previousproject( $project_data->id, $_category_slug, $project_data->date_created );
 		if($previousrecord) $previousrecord = $previousrecord->slug;
 
 		return array( 
@@ -72,6 +93,7 @@ class Main extends CI_Controller {
 			"modules"=>$modules, 
 			"links"=>$links
 		);
+		
 	}
 
 	public function getpagedata( $_page_id = "home", $_category_slug = "" ){
