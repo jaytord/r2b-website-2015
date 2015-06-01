@@ -43,6 +43,7 @@
             <div id="header-container">
                 <div class="header-inner">
                     <div id="logo" class="logo"><a href="<?= base_url(); ?>"></a></div>
+                    <div id="logo_tagline"></div>
                     <div id="hamburger" class="hamburger">
                         <div class="hamburger-inner">
                             <a>
